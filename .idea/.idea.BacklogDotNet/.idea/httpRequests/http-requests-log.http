@@ -1,0 +1,9 @@
+GET http://localhost:8080
+Accept: */*
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2025.1.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+
+<> 2026-01-15T154732.200.txt
+
+###
+
