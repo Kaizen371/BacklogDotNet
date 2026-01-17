@@ -1,3 +1,111 @@
+POST http://localhost:8080/auth/login
+Content-Type: application/json
+Content-Length: 42
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2025.1.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{"Email": "admin", "Password": "password"}
+
+<> 2026-01-16T192303.200.json
+
+###
+
+GET http://localhost:8080/auth/me
+Content-Type: application/json
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2025.1.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+###
+
+GET http://localhost:8080/auth/me
+Content-Type: application/json
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2025.1.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+###
+
+GET http://localhost:8080/auth/me
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3MDQ3NTU3OC0wM2RjLTRmYjktYjhjYi1mMGZlM2EyMzRjMDgiLCJleHAiOjE3Njg2MTI0NjksImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCJ9.a90g78ZftOhZ_M5FtG3hYNYdLgYosQ32W7g3nIn5bR4
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2025.1.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-01-16T192045.200.json
+
+###
+
+GET http://localhost:8080/auth/me
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3MDQ3NTU3OC0wM2RjLTRmYjktYjhjYi1mMGZlM2EyMzRjMDgiLCJleHAiOjE3Njg2MTI0NjksImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCJ9.a90g78ZftOhZ_M5FtG3hYNYdLgYosQ32W7g3nIn5bR4
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2025.1.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-01-16T191945.200.json
+
+###
+
+GET http://localhost:8080/auth/me
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3MDQ3NTU3OC0wM2RjLTRmYjktYjhjYi1mMGZlM2EyMzRjMDgiLCJleHAiOjE3Njg2MTI0NjksImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCJ9.a90g78ZftOhZ_M5FtG3hYNYdLgYosQ32W7g3nIn5bR4
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2025.1.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-01-16T191903.200.json
+
+###
+
+GET http://localhost:8080/auth/me
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3MDQ3NTU3OC0wM2RjLTRmYjktYjhjYi1mMGZlM2EyMzRjMDgiLCJleHAiOjE3Njg2MTI0NjksImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCJ9.a90g78ZftOhZ_M5FtG3hYNYdLgYosQ32W7g3nIn5bR4
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2025.1.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-01-16T191653.500.txt
+
+###
+
+POST http://localhost:8080/auth/login
+Content-Type: application/json
+Content-Length: 42
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2025.1.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{"Email": "admin", "Password": "password"}
+
+<> 2026-01-16T191429.200.json
+
+###
+
+POST http://localhost:8080/auth/login
+Accept: */*
+Content-Length: 42
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2025.1.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+
+{"Email": "admin", "Password": "password"}
+
+<> 2026-01-16T191337.415.txt
+
+###
+
+POST http://localhost:8080/login
+Accept: */*
+Content-Length: 42
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2025.1.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+
+{"Email": "admin", "Password": "password"}
+
+###
+
 GET http://localhost:8080
 Accept: */*
 User-Agent: IntelliJ HTTP Client/JetBrains Rider 2025.1.2
