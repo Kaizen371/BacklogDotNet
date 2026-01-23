@@ -1,6 +1,9 @@
 using System.Security.Claims;
+using BacklogDotNet.DTO;
 using BacklogDotNet.Models;
 using BacklogDotNet.Services;
+using Dapper;
+using MySqlConnector;
 using LoginRequest = Microsoft.AspNetCore.Identity.Data.LoginRequest;
 
 namespace BacklogDotNet.EndPoints;
@@ -10,9 +13,10 @@ public static class UserEndpoints
     public static void MapUserEndpoints(this IEndpointRouteBuilder app)
     {
         var group = app.MapGroup("/auth").WithTags("Auth");
-        group.MapPost("/login", (LoginRequest request, ITokenService tokenService) =>
+        
+        group.MapPost("/login", async (LoginRequest request, TokenService tokenService, UserService userService) =>
         {
-            var user = tokenService.Authenticate(request.Email, request.Password);
+            var user = await tokenService.Authenticate(request.Email, request.Password, userService);
             if (user == null)
             {
                 return (IResult)TypedResults.Unauthorized();
@@ -24,6 +28,8 @@ public static class UserEndpoints
         {
             return new UserProfile("Kai", "campbell", "kaizen");
         }).RequireAuthorization();
-    }
+        
+    } 
+    
     
 }

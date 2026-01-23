@@ -1,10 +1,15 @@
 using System.Security.Claims;
 using System.Text;
+using BacklogDotNet.DTO;
 using BacklogDotNet.EndPoints;
 using BacklogDotNet.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.IdentityModel.Tokens;
+using MySqlConnector;
+using Dapper;
+
+
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -22,13 +27,19 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                                 Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]!))
                 };
         });
-
+builder.Services.AddMySqlDataSource(builder.Configuration.GetConnectionString("Default"));
 
 builder.Services.AddAuthorization();
 
-builder.Services.AddSingleton<ITokenService, TokenService>();
+builder.Services.AddScoped<UserService>();
+
+builder.Services.AddSingleton<TokenService>();
+
+
 
 var app = builder.Build();
+
+
 
 app.UseAuthentication();
 app.UseAuthorization();

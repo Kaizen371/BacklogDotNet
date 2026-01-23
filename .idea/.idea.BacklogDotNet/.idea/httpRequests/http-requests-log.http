@@ -1,5 +1,68 @@
 POST http://localhost:8080/auth/login
 Content-Type: application/json
+Content-Length: 68
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2025.1.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{"Email": "videogamer@campbell-web.com", "Password": "371kai162436"}
+
+<> 2026-01-22T210234.200.json
+
+###
+
+POST http://localhost:8080/auth/login
+Content-Type: application/json
+Content-Length: 42
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2025.1.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{"Email": "admin", "Password": "password"}
+
+###
+
+POST http://localhost:8080/auth/login
+Content-Type: application/json
+Content-Length: 42
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2025.1.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{"Email": "admin", "Password": "password"}
+
+<> 2026-01-22T205837.500.txt
+
+###
+
+POST http://localhost:8080/auth/login
+Content-Type: application/json
+Content-Length: 42
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2025.1.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{"Email": "admin", "Password": "password"}
+
+<> 2026-01-22T205519.500.txt
+
+###
+
+POST http://localhost:8080/auth/login
+Content-Type: application/json
+Content-Length: 42
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2025.1.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{"Email": "admin", "Password": "password"}
+
+<> 2026-01-22T204856.500.txt
+
+###
+
+POST http://localhost:8080/auth/login
+Content-Type: application/json
 Content-Length: 42
 User-Agent: IntelliJ HTTP Client/JetBrains Rider 2025.1.2
 Accept-Encoding: br, deflate, gzip, x-gzip

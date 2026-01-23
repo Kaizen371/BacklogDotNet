@@ -1,18 +1,15 @@
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using BacklogDotNet.Models;
+using BacklogDotNet.DTO;
 using Microsoft.IdentityModel.Tokens;
 
 namespace BacklogDotNet.Services;
 
-public interface ITokenService {
-    string GenerateToken(User user);
-    User? Authenticate(string email, string password);
-}
 
-public class TokenService(IConfiguration config) : ITokenService {
-    public string GenerateToken(User user) {
+public class TokenService(IConfiguration config){
+    
+    public string GenerateToken(UserEntity user) {
         var claims = new[] {
             new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
         };
@@ -27,7 +24,14 @@ public class TokenService(IConfiguration config) : ITokenService {
         return new JwtSecurityTokenHandler().WriteToken(token);
     }
 
-    public User? Authenticate(string email, string password) => 
-        (email == "admin" && password == "password") 
-            ? new User(Guid.NewGuid()) : null;
+    public async Task<UserEntity?> Authenticate(string email, string password, UserService userService)
+    {
+        var user = await userService.GetByEmail(email);
+        if (user != null && user.Password == password)
+        {
+            return user;
+        }
+        
+        return null;
+    }
 }
