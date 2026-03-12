@@ -4,7 +4,7 @@ using BacklogDotNet.Models;
 using BacklogDotNet.Services;
 using Dapper;
 using MySqlConnector;
-using LoginRequest = Microsoft.AspNetCore.Identity.Data.LoginRequest;
+
 
 namespace BacklogDotNet.EndPoints;
 
@@ -24,9 +24,32 @@ public static class UserEndpoints
             return (IResult)TypedResults.Ok(new AuthToken(tokenService.GenerateToken(user)));
         }).AllowAnonymous();
 
-        group.MapGet("/me", (ClaimsPrincipal user) =>
+        group.MapGet("/me", async (ClaimsPrincipal principal, UserService userService) =>
         {
-            return new UserProfile("Kai", "campbell", "kaizen");
+            string userID = null;
+            
+            foreach (Claim claim in principal.Claims)
+            {
+                if (claim.Type == ClaimTypes.NameIdentifier)
+                {
+                    userID = claim.Value;
+                }
+            }
+
+            if (userID == null)
+            {
+                return (IResult)TypedResults.Unauthorized();
+            }
+
+            var userEntity = await userService.GetUser(userID);
+            if (userEntity == null)
+            {
+                return (IResult)TypedResults.NotFound();
+            }
+            var userModel = new UserProfile(userEntity.FirstName, userEntity.LastName, userEntity.Username);
+            
+            return (IResult)TypedResults.Ok(userModel);
+
         }).RequireAuthorization();
         
     } 

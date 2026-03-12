@@ -35,12 +35,22 @@ builder.Services.AddScoped<UserService>();
 
 builder.Services.AddSingleton<TokenService>();
 
+builder.Services.AddCors(options =>
+{
+        options.AddPolicy("AllowRider",
+                policy =>
+                {
+                        policy.WithOrigins("http://localhost:63342") // Your HTML's origin
+                                .AllowAnyHeader()
+                                .AllowAnyMethod();
+                });
+});
+
 
 
 var app = builder.Build();
 
-
-
+app.UseCors("AllowRider");
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapUserEndpoints();

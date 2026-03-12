@@ -7,6 +7,78 @@ Accept: */*
 
 {"Email": "videogamer@campbell-web.com", "Password": "371kai162436"}
 
+<> 2026-03-12T181603.200.json
+
+###
+
+GET http://localhost:8080/auth/me
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMWYwZjdmNS1jYmY0LTk5N2ItYjAxMC0zNDVhNjAzNTAxYTIiLCJleHAiOjE3NjkzMDE4MzksImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCJ9.yhv8o0NbXMO7L9EEgJzoqJ5kFRWgXo53bLJQMWKF0pA
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2025.1.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-01-24T191650.200.json
+
+###
+
+GET http://localhost:8080/auth/me
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMWYwZjdmNS1jYmY0LTk5N2ItYjAxMC0zNDVhNjAzNTAxYTIiLCJleHAiOjE3NjkzMDE4MzksImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCJ9.yhv8o0NbXMO7L9EEgJzoqJ5kFRWgXo53bLJQMWKF0pA
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2025.1.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+###
+
+GET http://localhost:8080/auth/me
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMWYwZjdmNS1jYmY0LTk5N2ItYjAxMC0zNDVhNjAzNTAxYTIiLCJleHAiOjE3NjkzMDE4MzksImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCJ9.yhv8o0NbXMO7L9EEgJzoqJ5kFRWgXo53bLJQMWKF0pA
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2025.1.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+###
+
+GET http://localhost:8080/auth/me
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMWYwZjdmNS1jYmY0LTk5N2ItYjAxMC0zNDVhNjAzNTAxYTIiLCJleHAiOjE3NjkzMDE4MzksImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCJ9.yhv8o0NbXMO7L9EEgJzoqJ5kFRWgXo53bLJQMWKF0pA
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2025.1.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+###
+
+POST http://localhost:8080/auth/login
+Content-Type: application/json
+Content-Length: 68
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2025.1.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{"Email": "videogamer@campbell-web.com", "Password": "371kai162436"}
+
+<> 2026-01-24T184359.200.json
+
+###
+
+GET http://localhost:8080/auth/me
+Content-Type: application/json
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2025.1.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+###
+
+POST http://localhost:8080/auth/login
+Content-Type: application/json
+Content-Length: 68
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2025.1.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{"Email": "videogamer@campbell-web.com", "Password": "371kai162436"}
+
 <> 2026-01-22T210234.200.json
 
 ###
