@@ -9,13 +9,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="863a48b7-8ded-4d41-92c5-00f7bca30788" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/BacklogDotNet/BacklogDotNetUI.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.BacklogDotNet/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BacklogDotNet/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.BacklogDotNet/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BacklogDotNet/.idea/httpRequests/http-requests-log.http" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BacklogDotNet/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BacklogDotNet/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BacklogDotNet.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/BacklogDotNet.sln.DotSettings.user" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BacklogDotNet/EndPoints/UserEndpoints.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BacklogDotNet/EndPoints/UserEndpoints.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BacklogDotNet/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BacklogDotNet/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BacklogDotNet/BacklogDotNetUI.html" beforeDir="false" afterPath="$PROJECT_DIR$/BacklogDotNet/BacklogDotNetUI.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,32 +42,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Launch Settings Profile.BacklogDotNet: http.executor": "Run",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "HTTP Request.rest-api | #1.executor": "Run",
-    "HTTP Request.rest-api | #2.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Launch Settings Profile.BacklogDotNet: http.executor&quot;: &quot;Run&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;HTTP Request.rest-api | #1.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.rest-api | #2.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ],
-    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
-      "TEXT"
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;TEXT&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.BacklogDotNet: http">
     <configuration name="rest-api | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/rest-api.http" executionIdentifier="#1" runType="Run single request">
       <method v="2" />
@@ -143,6 +138,12 @@
       <workItem from="1773350947448" duration="3255000" />
       <workItem from="1773354266679" duration="165000" />
       <workItem from="1773355079239" duration="1476000" />
+      <workItem from="1773436049918" duration="5190000" />
+      <workItem from="1773680712219" duration="854000" />
+      <workItem from="1773709001784" duration="348000" />
+      <workItem from="1773769700065" duration="1632000" />
+      <workItem from="1773879935783" duration="1282000" />
+      <workItem from="1773974312883" duration="1354000" />
     </task>
     <servers />
   </component>
