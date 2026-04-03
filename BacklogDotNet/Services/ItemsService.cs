@@ -1,0 +1,91 @@
+using BacklogDotNet.DTO;
+using MySqlConnector;
+
+namespace BacklogDotNet.Services;
+
+public class ItemsService(MySqlDataSource dataSource)
+{
+    public async Task<ItemEntity> addItem(ItemEntity item)
+    {
+        using var connection = await dataSource.OpenConnectionAsync();
+
+        var command =
+            new MySqlCommand(
+                "INSERT INTO 'items', VALUES(@title, @platform, @status, @rating, @userID, @production, @mediaCategory, @ordinate");
+        
+        command.Parameters.AddWithValue("@title", item.Title);
+        command.Parameters.AddWithValue("@platform", item.Platform);
+        command.Parameters.AddWithValue("@status", item.Status);
+        command.Parameters.AddWithValue("@rating", item.Rating);
+        command.Parameters.AddWithValue("@userID", item.UserID);
+        command.Parameters.AddWithValue("@production", item.Production);
+        command.Parameters.AddWithValue("@mediaCategory", item.MediaCategory);
+        command.Parameters.AddWithValue("@ordinate", item.Ordinate);
+        
+        
+        command.ExecuteNonQuery();
+
+        var idCommand = new MySqlCommand("SELECT LAST_INSERT_ID();");
+
+        var itemID = idCommand.ExecuteScalar().ToString();
+        
+        item.ID = itemID;
+
+        return item ; 
+    }
+
+    public async void removeItem(int ID)
+    {
+        using var connection = await dataSource.OpenConnectionAsync();
+        
+        var command = new MySqlCommand("DELETE FROM items WHERE ID = @ID", connection);
+        
+        command.Parameters.AddWithValue("@ID", ID);
+        command.ExecuteNonQuery();
+        
+        
+    }
+
+    public async void editItem(ItemEntity item)
+    {
+        using var connection = await dataSource.OpenConnectionAsync();
+        
+        using var command = new  MySqlCommand("UPDATE Items, Set Title = @title , Value2 = Value WHERE ID = @ID", connection);
+        // parameters with updates
+        
+        command.Parameters.AddWithValue("@ID", item.ID);
+        command.ExecuteNonQuery();
+    }
+
+    public async Task<List<ItemEntity>> GetItems(string externalID)
+    {
+        using var connection = await dataSource.OpenConnectionAsync();
+        
+        var command = new MySqlCommand("SELECT platform, title, status, rating, BIN_TO_UUID(userID) as user_id, production, mediaCategory, ordinate, id FROM Items WHERE userId = UUID_TO_BIN(@externalID)", connection);
+        
+        command.Parameters.AddWithValue("@externalID", externalID);
+        
+        using var reader = command.ExecuteReader();
+        
+        List<ItemEntity> items = new List<ItemEntity>();
+
+        while (reader.Read())
+        {
+            var newItem = new ItemEntity(
+                reader.GetString("platform"), 
+                reader.GetString("title"), 
+                reader.GetString("status"), 
+                reader.GetInt32("rating"),
+                reader.GetString("user_id"),
+                reader.GetString("production"),
+                reader.GetString("mediaCategory"),
+                reader.GetInt32("ordinate"),
+                reader.GetInt32("id").ToString());
+            
+            items.Add(newItem);
+        }
+        
+
+        return items;
+    }
+}

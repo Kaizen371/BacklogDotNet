@@ -1,3 +1,144 @@
+GET http://localhost:8080/items
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMWYwZjdmNS1jYmY0LTk5N2ItYjAxMC0zNDVhNjAzNTAxYTIiLCJleHAiOjE3NzUyNjE1ODAsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCJ9.uubuyRjm7l2_8-L6VxVang5iwT1O4Qgd8xN9kyXIsfE
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2025.1.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-04-03T194153.200.json
+
+###
+
+GET http://localhost:8080/items
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMWYwZjdmNS1jYmY0LTk5N2ItYjAxMC0zNDVhNjAzNTAxYTIiLCJleHAiOjE3NzUyNjE1ODAsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCJ9.uubuyRjm7l2_8-L6VxVang5iwT1O4Qgd8xN9kyXIsfE
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2025.1.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-04-03T194021.500.txt
+
+###
+
+GET http://localhost:8080/items
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMWYwZjdmNS1jYmY0LTk5N2ItYjAxMC0zNDVhNjAzNTAxYTIiLCJleHAiOjE3NzUyNjE1ODAsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCJ9.uubuyRjm7l2_8-L6VxVang5iwT1O4Qgd8xN9kyXIsfE
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2025.1.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-04-03T194015.500.txt
+
+###
+
+GET http://localhost:8080/items
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMWYwZjdmNS1jYmY0LTk5N2ItYjAxMC0zNDVhNjAzNTAxYTIiLCJleHAiOjE3NzUyNjE1ODAsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCJ9.uubuyRjm7l2_8-L6VxVang5iwT1O4Qgd8xN9kyXIsfE
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2025.1.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-04-03T194001.500.txt
+
+###
+
+GET http://localhost:8080/items
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMWYwZjdmNS1jYmY0LTk5N2ItYjAxMC0zNDVhNjAzNTAxYTIiLCJleHAiOjE3NzUyNjE1ODAsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCJ9.uubuyRjm7l2_8-L6VxVang5iwT1O4Qgd8xN9kyXIsfE
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2025.1.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-04-03T193838.500.txt
+
+###
+
+GET http://localhost:8080/items
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMWYwZjdmNS1jYmY0LTk5N2ItYjAxMC0zNDVhNjAzNTAxYTIiLCJleHAiOjE3NzUyNjE1ODAsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCJ9.uubuyRjm7l2_8-L6VxVang5iwT1O4Qgd8xN9kyXIsfE
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2025.1.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-04-03T193321.500.txt
+
+###
+
+GET http://localhost:8080/items
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMWYwZjdmNS1jYmY0LTk5N2ItYjAxMC0zNDVhNjAzNTAxYTIiLCJleHAiOjE3NzUyNjE1ODAsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCJ9.uubuyRjm7l2_8-L6VxVang5iwT1O4Qgd8xN9kyXIsfE
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2025.1.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-04-03T193112.500.txt
+
+###
+
+GET http://localhost:8080/items
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMWYwZjdmNS1jYmY0LTk5N2ItYjAxMC0zNDVhNjAzNTAxYTIiLCJleHAiOjE3NzUyNjE1ODAsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCJ9.uubuyRjm7l2_8-L6VxVang5iwT1O4Qgd8xN9kyXIsfE
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2025.1.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-04-03T191701.200.json
+
+###
+
+GET http://localhost:8080/auth/me
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMWYwZjdmNS1jYmY0LTk5N2ItYjAxMC0zNDVhNjAzNTAxYTIiLCJleHAiOjE3NzUyNjE1ODAsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCJ9.uubuyRjm7l2_8-L6VxVang5iwT1O4Qgd8xN9kyXIsfE
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2025.1.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-04-03T191658.200.json
+
+###
+
+GET http://localhost:8080/items
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMWYwZjdmNS1jYmY0LTk5N2ItYjAxMC0zNDVhNjAzNTAxYTIiLCJleHAiOjE3NzUyNjE1ODAsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCJ9.uubuyRjm7l2_8-L6VxVang5iwT1O4Qgd8xN9kyXIsfE
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2025.1.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+###
+
+GET http://localhost:8080/auth/me
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMWYwZjdmNS1jYmY0LTk5N2ItYjAxMC0zNDVhNjAzNTAxYTIiLCJleHAiOjE3NzUyNjE1ODAsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCJ9.uubuyRjm7l2_8-L6VxVang5iwT1O4Qgd8xN9kyXIsfE
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2025.1.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-04-03T191341.200.json
+
+###
+
+GET http://localhost:8080/auth/me
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMWYwZjdmNS1jYmY0LTk5N2ItYjAxMC0zNDVhNjAzNTAxYTIiLCJleHAiOjE3NzUyNjE1ODAsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCJ9.uubuyRjm7l2_8-L6VxVang5iwT1O4Qgd8xN9kyXIsfE"
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2025.1.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+###
+
+POST http://localhost:8080/auth/login
+Content-Type: application/json
+Content-Length: 68
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2025.1.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{"Email": "videogamer@campbell-web.com", "Password": "371kai162436"}
+
+<> 2026-04-03T191300.200.json
+
+###
+
 POST http://localhost:8080/auth/login
 Content-Type: application/json
 Content-Length: 68

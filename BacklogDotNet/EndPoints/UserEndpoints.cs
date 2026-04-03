@@ -26,20 +26,13 @@ public static class UserEndpoints
 
         group.MapGet("/me", async (ClaimsPrincipal principal, UserService userService) =>
         {
-            string userID = null;
+            string userID = GetUserID(principal);
             
-            foreach (Claim claim in principal.Claims)
-            {
-                if (claim.Type == ClaimTypes.NameIdentifier)
-                {
-                    userID = claim.Value;
-                }
-            }
 
             if (userID == null)
             {
                 return (IResult)TypedResults.Unauthorized();
-            }
+            } 
 
             var userEntity = await userService.GetUser(userID);
             if (userEntity == null)
@@ -53,6 +46,20 @@ public static class UserEndpoints
         }).RequireAuthorization();
         
     } 
-    
+    public static string? GetUserID(ClaimsPrincipal principal)
+    {
+        string userID = null;
+            
+        foreach (Claim claim in principal.Claims)
+        {
+            if (claim.Type == ClaimTypes.NameIdentifier)
+            {
+                userID = claim.Value;
+            }
+        }
+        return userID;
+
+    }
     
 }
+

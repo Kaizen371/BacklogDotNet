@@ -33,6 +33,8 @@ builder.Services.AddAuthorization();
 
 builder.Services.AddScoped<UserService>();
 
+builder.Services.AddScoped<ItemsService>();
+
 builder.Services.AddSingleton<TokenService>();
 
 builder.Services.AddCors(options =>
@@ -54,5 +56,6 @@ app.UseCors("AllowRider");
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapUserEndpoints();
+app.MapItemEndpoints();
 
 app.Run();
