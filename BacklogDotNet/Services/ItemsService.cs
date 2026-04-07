@@ -7,11 +7,11 @@ public class ItemsService(MySqlDataSource dataSource)
 {
     public async Task<ItemEntity> addItem(ItemEntity item)
     {
-        using var connection = await dataSource.OpenConnectionAsync();
+        using var connection = dataSource.OpenConnection();
 
         var command =
             new MySqlCommand(
-                "INSERT INTO 'items', VALUES(@title, @platform, @status, @rating, @userID, @production, @mediaCategory, @ordinate");
+                "INSERT INTO items (title, platform, status, rating, userID, production, mediaCategory, ordinate) VALUES(@title, @platform, @status, @rating, UUID_TO_BIN(@userID), @production, @mediaCategory, @ordinate)", connection);
         
         command.Parameters.AddWithValue("@title", item.Title);
         command.Parameters.AddWithValue("@platform", item.Platform);
@@ -21,11 +21,11 @@ public class ItemsService(MySqlDataSource dataSource)
         command.Parameters.AddWithValue("@production", item.Production);
         command.Parameters.AddWithValue("@mediaCategory", item.MediaCategory);
         command.Parameters.AddWithValue("@ordinate", item.Ordinate);
-        
-        
+
+
         command.ExecuteNonQuery();
 
-        var idCommand = new MySqlCommand("SELECT LAST_INSERT_ID();");
+        var idCommand = new MySqlCommand("SELECT LAST_INSERT_ID();", connection);
 
         var itemID = idCommand.ExecuteScalar().ToString();
         

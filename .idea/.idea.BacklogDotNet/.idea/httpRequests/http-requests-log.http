@@ -1,5 +1,328 @@
 GET http://localhost:8080/items
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMWYwZjdmNS1jYmY0LTk5N2ItYjAxMC0zNDVhNjAzNTAxYTIiLCJleHAiOjE3NzU1MjMyMjksImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCJ9.13M8jKuWz3KsjlXDtlQTHO241CVcR21L-aEUk9ZTjgk
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2025.1.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-04-06T201620.200.json
+
+###
+
+POST http://localhost:8080/items
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMWYwZjdmNS1jYmY0LTk5N2ItYjAxMC0zNDVhNjAzNTAxYTIiLCJleHAiOjE3NzU1MjMyMjksImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCJ9.13M8jKuWz3KsjlXDtlQTHO241CVcR21L-aEUk9ZTjgk
+Content-Length: 159
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2025.1.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "title": "new TITLE 3",
+  "platform": "new 3 ",
+  "status": "backlog",
+  "rating": 0,
+  "production": " new",
+  "mediaCategory": "games",
+  "ordinate": 1
+}
+
+<> 2026-04-06T201613.200.json
+
+###
+
+GET http://localhost:8080/items
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMWYwZjdmNS1jYmY0LTk5N2ItYjAxMC0zNDVhNjAzNTAxYTIiLCJleHAiOjE3NzU1MjMyMjksImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCJ9.13M8jKuWz3KsjlXDtlQTHO241CVcR21L-aEUk9ZTjgk
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2025.1.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-04-06T201459.200.json
+
+###
+
+POST http://localhost:8080/items
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMWYwZjdmNS1jYmY0LTk5N2ItYjAxMC0zNDVhNjAzNTAxYTIiLCJleHAiOjE3NzU1MjMyMjksImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCJ9.13M8jKuWz3KsjlXDtlQTHO241CVcR21L-aEUk9ZTjgk
+Content-Length: 155
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2025.1.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "title": "new TITLE",
+  "platform": "new ",
+  "status": "backlog",
+  "rating": 0,
+  "production": " new",
+  "mediaCategory": "games",
+  "ordinate": 1
+}
+
+<> 2026-04-06T201340.500.txt
+
+###
+
+POST http://localhost:8080/items
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMWYwZjdmNS1jYmY0LTk5N2ItYjAxMC0zNDVhNjAzNTAxYTIiLCJleHAiOjE3NzU1MjMyMjksImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCJ9.13M8jKuWz3KsjlXDtlQTHO241CVcR21L-aEUk9ZTjgk
+Content-Length: 155
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2025.1.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "title": "new TITLE",
+  "platform": "new ",
+  "status": "backlog",
+  "rating": 0,
+  "production": " new",
+  "mediaCategory": "games",
+  "ordinate": 1
+}
+
+<> 2026-04-06T201204.500.txt
+
+###
+
+POST http://localhost:8080/items
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMWYwZjdmNS1jYmY0LTk5N2ItYjAxMC0zNDVhNjAzNTAxYTIiLCJleHAiOjE3NzU1MjMyMjksImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCJ9.13M8jKuWz3KsjlXDtlQTHO241CVcR21L-aEUk9ZTjgk
+Content-Length: 159
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2025.1.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "title": "new TITLE",
+  "platform": "new ",
+  "status": "new backlog",
+  "rating": 0,
+  "production": " new",
+  "mediaCategory": "games",
+  "ordinate": 1
+}
+
+<> 2026-04-06T201116.500.txt
+
+###
+
+POST http://localhost:8080/items
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMWYwZjdmNS1jYmY0LTk5N2ItYjAxMC0zNDVhNjAzNTAxYTIiLCJleHAiOjE3NzU1MjMyMjksImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCJ9.13M8jKuWz3KsjlXDtlQTHO241CVcR21L-aEUk9ZTjgk
+Content-Length: 159
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2025.1.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "title": "new TITLE",
+  "platform": "new ",
+  "status": "new backlog",
+  "rating": 0,
+  "production": " new",
+  "mediaCategory": "games",
+  "ordinate": 1
+}
+
+<> 2026-04-06T200655.500.txt
+
+###
+
+POST http://localhost:8080/items
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMWYwZjdmNS1jYmY0LTk5N2ItYjAxMC0zNDVhNjAzNTAxYTIiLCJleHAiOjE3NzU1MjMyMjksImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCJ9.13M8jKuWz3KsjlXDtlQTHO241CVcR21L-aEUk9ZTjgk
+Content-Length: 159
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2025.1.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "title": "new TITLE",
+  "platform": "new ",
+  "status": "new backlog",
+  "rating": 0,
+  "production": " new",
+  "mediaCategory": "games",
+  "ordinate": 1
+}
+
+<> 2026-04-06T200550.500.txt
+
+###
+
+POST http://localhost:8080/items
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMWYwZjdmNS1jYmY0LTk5N2ItYjAxMC0zNDVhNjAzNTAxYTIiLCJleHAiOjE3NzU1MjMyMjksImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCJ9.13M8jKuWz3KsjlXDtlQTHO241CVcR21L-aEUk9ZTjgk
+Content-Length: 159
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2025.1.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "title": "new TITLE",
+  "platform": "new ",
+  "status": "new backlog",
+  "rating": 0,
+  "production": " new",
+  "mediaCategory": "games",
+  "ordinate": 1
+}
+
+<> 2026-04-06T200517.500.txt
+
+###
+
+POST http://localhost:8080/items
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMWYwZjdmNS1jYmY0LTk5N2ItYjAxMC0zNDVhNjAzNTAxYTIiLCJleHAiOjE3NzU1MjMyMjksImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCJ9.13M8jKuWz3KsjlXDtlQTHO241CVcR21L-aEUk9ZTjgk
+Content-Length: 159
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2025.1.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "title": "new TITLE",
+  "platform": "new ",
+  "status": "new backlog",
+  "rating": 0,
+  "production": " new",
+  "mediaCategory": "games",
+  "ordinate": 1
+}
+
+<> 2026-04-06T200414.500.txt
+
+###
+
+POST http://localhost:8080/items
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMWYwZjdmNS1jYmY0LTk5N2ItYjAxMC0zNDVhNjAzNTAxYTIiLCJleHAiOjE3NzU1MjMyMjksImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCJ9.13M8jKuWz3KsjlXDtlQTHO241CVcR21L-aEUk9ZTjgk
+Content-Length: 159
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2025.1.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "title": "new TITLE",
+  "platform": "new ",
+  "status": "new backlog",
+  "rating": 0,
+  "production": " new",
+  "mediaCategory": "games",
+  "ordinate": 1
+}
+
+<> 2026-04-06T200307.500.txt
+
+###
+
+GET http://localhost:8080/items
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMWYwZjdmNS1jYmY0LTk5N2ItYjAxMC0zNDVhNjAzNTAxYTIiLCJleHAiOjE3NzU1MjMyMjksImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCJ9.13M8jKuWz3KsjlXDtlQTHO241CVcR21L-aEUk9ZTjgk
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2025.1.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-04-06T200304.200.json
+
+###
+
+POST http://localhost:8080/items
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMWYwZjdmNS1jYmY0LTk5N2ItYjAxMC0zNDVhNjAzNTAxYTIiLCJleHAiOjE3NzU1MjMyMjksImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCJ9.13M8jKuWz3KsjlXDtlQTHO241CVcR21L-aEUk9ZTjgk
+Content-Length: 159
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2025.1.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "title": "new TITLE",
+  "platform": "new ",
+  "status": "new backlog",
+  "rating": 0,
+  "production": " new",
+  "mediaCategory": "games",
+  "ordinate": 1
+}
+
+<> 2026-04-06T200042.500.txt
+
+###
+
+GET http://localhost:8080/items
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMWYwZjdmNS1jYmY0LTk5N2ItYjAxMC0zNDVhNjAzNTAxYTIiLCJleHAiOjE3NzU1MjMyMjksImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCJ9.13M8jKuWz3KsjlXDtlQTHO241CVcR21L-aEUk9ZTjgk
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2025.1.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-04-06T200037.200.json
+
+###
+
+POST http://localhost:8080/auth/login
+Content-Type: application/json
+Content-Length: 68
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2025.1.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{"Email": "videogamer@campbell-web.com", "Password": "371kai162436"}
+
+<> 2026-04-06T200027.200.json
+
+###
+
+POST http://localhost:8080/items
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMWYwZjdmNS1jYmY0LTk5N2ItYjAxMC0zNDVhNjAzNTAxYTIiLCJleHAiOjE3NzU1MjMyMjksImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCJ9.13M8jKuWz3KsjlXDtlQTHO241CVcR21L-aEUk9ZTjgk
+Content-Length: 159
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2025.1.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "title": "new TITLE",
+  "platform": "new ",
+  "status": "new backlog",
+  "rating": 0,
+  "production": " new",
+  "mediaCategory": "games",
+  "ordinate": 1
+}
+
+<> 2026-04-06T195546.500.txt
+
+###
+
+GET http://localhost:8080/items
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMWYwZjdmNS1jYmY0LTk5N2ItYjAxMC0zNDVhNjAzNTAxYTIiLCJleHAiOjE3NzU1MjMyMjksImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCJ9.13M8jKuWz3KsjlXDtlQTHO241CVcR21L-aEUk9ZTjgk
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2025.1.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-04-06T195436.200.json
+
+###
+
+POST http://localhost:8080/auth/login
+Content-Type: application/json
+Content-Length: 68
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2025.1.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{"Email": "videogamer@campbell-web.com", "Password": "371kai162436"}
+
+<> 2026-04-06T195349.200.json
+
+###
+
+GET http://localhost:8080/items
+Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMWYwZjdmNS1jYmY0LTk5N2ItYjAxMC0zNDVhNjAzNTAxYTIiLCJleHAiOjE3NzUyNjE1ODAsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCJ9.uubuyRjm7l2_8-L6VxVang5iwT1O4Qgd8xN9kyXIsfE
 User-Agent: IntelliJ HTTP Client/JetBrains Rider 2025.1.2
 Accept-Encoding: br, deflate, gzip, x-gzip
@@ -344,50 +667,6 @@ Accept-Encoding: br, deflate, gzip, x-gzip
 Accept: */*
 
 <> 2026-01-16T191653.500.txt
-
-###
-
-POST http://localhost:8080/auth/login
-Content-Type: application/json
-Content-Length: 42
-User-Agent: IntelliJ HTTP Client/JetBrains Rider 2025.1.2
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{"Email": "admin", "Password": "password"}
-
-<> 2026-01-16T191429.200.json
-
-###
-
-POST http://localhost:8080/auth/login
-Accept: */*
-Content-Length: 42
-User-Agent: IntelliJ HTTP Client/JetBrains Rider 2025.1.2
-Accept-Encoding: br, deflate, gzip, x-gzip
-
-{"Email": "admin", "Password": "password"}
-
-<> 2026-01-16T191337.415.txt
-
-###
-
-POST http://localhost:8080/login
-Accept: */*
-Content-Length: 42
-User-Agent: IntelliJ HTTP Client/JetBrains Rider 2025.1.2
-Accept-Encoding: br, deflate, gzip, x-gzip
-
-{"Email": "admin", "Password": "password"}
-
-###
-
-GET http://localhost:8080
-Accept: */*
-User-Agent: IntelliJ HTTP Client/JetBrains Rider 2025.1.2
-Accept-Encoding: br, deflate, gzip, x-gzip
-
-<> 2026-01-15T154732.200.txt
 
 ###
 

@@ -524,7 +524,38 @@
     let accessToken;
 
     // --- Dynamic Data Store ---
-    let backlogData = {
+    let backlogData = [
+        {
+            "title": "TITLE",
+            "platform": " ",
+            "status": "completed",
+            "rating": 5,
+            "production": " ",
+            "mediaCategory": "games",
+            "ordinate": 1,
+            "id": "1"
+        },
+        {
+            "title": "new TITLE",
+            "platform": "new ",
+            "status": "playing",
+            "rating": 0,
+            "production": " new",
+            "mediaCategory": "games",
+            "ordinate": 1,
+            "id": "2"
+        },
+        {
+            "title": "new TITLE 3",
+            "platform": "new 3 ",
+            "status": "backlog",
+            "rating": 0,
+            "production": " new",
+            "mediaCategory": "games",
+            "ordinate": 1,
+            "id": "3"
+        }
+    ]; /*{
         games: [
             { id: 1, title: 'Elden Ring', sub: 'FromSoftware', meta: 'PC / PS5', status: 'playing', rating: 5 },
             { id: 2, title: 'Hollow Knight', sub: 'Team Cherry', meta: 'Switch', status: 'completed', rating: 4 },
@@ -537,18 +568,28 @@
         tv: [
             { id: 6, title: 'The Bear', sub: 'Season 2', meta: 'Hulu / FX', status: 'backlog', rating: 0 }
         ]
-    };
+    };*/
+
+    let transformedData = backlogData.reduce((acc, cur) => {
+        if(!(cur.mediaCategory in acc)){
+            acc[cur.mediaCategory] = [];
+        }
+        acc[cur.mediaCategory].push(cur);
+        return acc;
+    }, {});
 
     // --- State for Drag and Drop ---
     let dragSourceElement = null;
     let dragSourceType = null;
     let dragSourceIndex = null;
-
+    
+   
+    
     function renderBacklog() {
-        Object.keys(backlogData).forEach(type => {
-            const container = document.getElementById(`${type}Body`);
-            const countLabel = document.getElementById(`${type}Count`);
-            const items = backlogData[type];
+        Object.keys(transformedData).forEach(mediaCategory => {
+            const container = document.getElementById(`${mediaCategory}Body`);
+            const countLabel = document.getElementById(`${mediaCategory}Count`);
+            const items = transformedData[mediaCategory];
 
             countLabel.innerText = `${items.length} Item${items.length !== 1 ? 's' : ''}`;
             container.innerHTML = '';
@@ -557,7 +598,7 @@
                 const tr = document.createElement('tr');
                 tr.draggable = true;
                 tr.dataset.index = index;
-                tr.dataset.type = type;
+                tr.dataset.type = mediaCategory;
 
                 // Drag Events
                 tr.addEventListener('dragstart', handleDragStart);
@@ -567,24 +608,24 @@
                 tr.addEventListener('dragend', handleDragEnd);
 
                 // Determine context-aware labels
-                const playingLabel = (type === 'games') ? 'Playing' : 'Watching';
+                const playingLabel = (mediaCategory === 'games') ? 'Playing' : 'Watching';
 
                 tr.innerHTML = `
                     <td>
                         <div class="item-title">${item.title}</div>
-                        <div class="item-meta">${item.sub}</div>
+                        <div class="item-platform">${item.sub}</div>
                     </td>
-                    <td>${item.meta}</td>
+                    <td>${item.platform}</td>
                     <td>
                         <select class="status-select status-${item.status}-color" 
-                                onchange="updateStatus('${type}', ${index}, this.value)">
+                                onchange="updateStatus('${mediaCategory}', ${index}, this.value)">
                             <option value="backlog" ${item.status === 'backlog' ? 'selected' : ''}>Backlog</option>
                             <option value="playing" ${item.status === 'playing' ? 'selected' : ''}>${playingLabel}</option>
                             <option value="completed" ${item.status === 'completed' ? 'selected' : ''}>Completed</option>
                         </select>
                     </td>
                     <td class="stars">
-                        ${renderStars(type, index, item.rating)}
+                        ${renderStars(mediaCategory, index, item.rating)}
                     </td>
                 `;
                 container.appendChild(tr);
@@ -604,12 +645,12 @@
     }
 
     window.updateRating = (type, index, newRating) => {
-        backlogData[type][index].rating = newRating;
+        transformedData[type][index].rating = newRating;
         renderBacklog();
     };
 
     window.updateStatus = (type, index, newStatus) => {
-        backlogData[type][index].status = newStatus;
+        transformedData[type][index].status = newStatus;
         renderBacklog();
     };
 
@@ -643,7 +684,7 @@
         const targetIndex = parseInt(this.dataset.index);
 
         if (dragSourceType === targetType && dragSourceIndex !== targetIndex) {
-            const list = backlogData[targetType];
+            const list = transformedData[targetType];
             const movedItem = list.splice(dragSourceIndex, 1)[0];
             list.splice(targetIndex, 0, movedItem);
             renderBacklog();
