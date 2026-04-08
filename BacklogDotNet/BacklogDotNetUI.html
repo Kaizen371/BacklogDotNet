@@ -19,6 +19,7 @@
             --accent: #3b82f6;
             --accent-hover: #2563eb;
             --danger: #ef4444;
+            --success: #10b981;
             --discord: #5865F2;
             --star-gold: #fbbf24;
         }
@@ -117,6 +118,14 @@
             box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
         }
 
+        /* Small Inputs for the table */
+        .table-input {
+            padding: 8px 12px;
+            font-size: 0.85rem;
+            width: 100%;
+            margin-bottom: 4px;
+        }
+
         .btn {
             display: flex;
             align-items: center;
@@ -135,6 +144,46 @@
         .btn:active { transform: scale(0.98); }
         .btn-primary { background-color: var(--accent); color: white; margin-top: 10px; }
         .btn-discord { background-color: var(--discord); color: white; margin-top: 12px; }
+
+        .btn-icon {
+            width: 36px;
+            height: 36px;
+            padding: 0;
+            border-radius: 50%;
+            background-color: var(--bg-input);
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .btn-icon:hover {
+            color: var(--accent);
+            border-color: var(--accent);
+            background-color: rgba(59, 130, 246, 0.1);
+        }
+
+        .btn-save {
+            background-color: var(--success);
+            color: white;
+            padding: 6px 12px;
+            font-size: 0.75rem;
+            width: auto;
+            display: inline-flex;
+            margin-right: 8px;
+        }
+
+        .btn-cancel {
+            background-color: transparent;
+            color: var(--text-muted);
+            padding: 6px 12px;
+            font-size: 0.75rem;
+            width: auto;
+            display: inline-flex;
+            border: 1px solid var(--border);
+        }
 
         .divider {
             position: relative;
@@ -278,6 +327,12 @@
             height: 24px;
         }
 
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
         .card-count {
             background-color: var(--bg-input);
             padding: 4px 12px;
@@ -317,26 +372,6 @@
 
         tr:last-child td { border-bottom: none; }
 
-        /* Draggable visual feedback */
-        tr[draggable="true"] {
-            cursor: grab;
-            user-select: none;
-        }
-
-        tr.dragging {
-            opacity: 0.4;
-            background-color: var(--bg-input);
-        }
-
-        tr.drag-over td {
-            border-top: 2px solid var(--accent);
-        }
-
-        tr:hover td { background-color: rgba(255, 255, 255, 0.01); }
-
-        .item-title { font-weight: 600; color: var(--text-primary); }
-        .item-meta { font-size: 0.85rem; color: var(--text-muted); }
-
         /* Status Select Styling */
         .status-select {
             background-color: var(--bg-input);
@@ -358,22 +393,12 @@
             padding-right: 28px;
         }
 
-        .status-select:focus {
-            border-color: var(--accent);
-        }
+        .status-select:focus { border-color: var(--accent); }
 
-        .status-select option {
-            background-color: var(--bg-card);
-            color: var(--text-secondary);
-            text-transform: uppercase;
-        }
-
-        /* Status Dynamic Colors */
         .status-backlog-color { color: #60a5fa !important; border-color: rgba(59, 130, 246, 0.3); }
         .status-playing-color { color: #34d399 !important; border-color: rgba(16, 185, 129, 0.3); }
         .status-completed-color { color: #a78bfa !important; border-color: rgba(139, 92, 246, 0.3); }
 
-        /* Stars Interaction */
         .stars {
             color: var(--star-gold);
             letter-spacing: 2px;
@@ -381,17 +406,12 @@
             white-space: nowrap;
         }
 
-        .star-item {
-            cursor: pointer;
-            transition: transform 0.1s;
-            display: inline-block;
-        }
-
-        .star-item:hover {
-            transform: scale(1.3);
-        }
-
+        .star-item { cursor: pointer; transition: transform 0.1s; display: inline-block; }
+        .star-item:hover { transform: scale(1.3); }
         .stars-empty { color: var(--border); }
+
+        .item-title { font-weight: 600; color: var(--text-primary); }
+        .item-platform { font-size: 0.8rem; color: var(--text-muted); }
 
         @media (min-width: 1024px) {
             .backlog-container { grid-template-columns: repeat(1, 1fr); }
@@ -443,14 +463,19 @@
     </div>
 
     <div class="backlog-container">
-        <!-- GAMES SECTION -->
-        <section class="backlog-card">
+        <!-- SECTIONS -->
+        <section class="backlog-card" id="gamesCard">
             <div class="card-header">
                 <div class="card-title">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 12h.01M9 12h.01M15 12h.01M18 12h.01M4 16h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2z"/><path d="M6 20l2-4M18 20l-2-4"/></svg>
                     Games
                 </div>
-                <span class="card-count" id="gamesCount">0 Items</span>
+                <div class="header-actions">
+                    <span class="card-count" id="gamesCount">0 Items</span>
+                    <button class="btn-icon" title="Add Game" onclick="showAddRow('games')">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+                    </button>
+                </div>
             </div>
             <div class="table-responsive">
                 <table>
@@ -467,14 +492,18 @@
             </div>
         </section>
 
-        <!-- MOVIES SECTION -->
-        <section class="backlog-card">
+        <section class="backlog-card" id="moviesCard">
             <div class="card-header">
                 <div class="card-title">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="2" y1="7" x2="7" y2="7"/><line x1="2" y1="17" x2="7" y2="17"/><line x1="17" y1="17" x2="22" y2="17"/><line x1="17" y1="7" x2="22" y2="7"/></svg>
                     Movies
                 </div>
-                <span class="card-count" id="moviesCount">0 Items</span>
+                <div class="header-actions">
+                    <span class="card-count" id="moviesCount">0 Items</span>
+                    <button class="btn-icon" title="Add Movie" onclick="showAddRow('movies')">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+                    </button>
+                </div>
             </div>
             <div class="table-responsive">
                 <table>
@@ -491,14 +520,18 @@
             </div>
         </section>
 
-        <!-- TV SHOWS SECTION -->
-        <section class="backlog-card">
+        <section class="backlog-card" id="tvCard">
             <div class="card-header">
                 <div class="card-title">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="15" rx="2" ry="2"/><polyline points="17 2 12 7 7 2"/></svg>
                     TV Shows
                 </div>
-                <span class="card-count" id="tvCount">0 Items</span>
+                <div class="header-actions">
+                    <span class="card-count" id="tvCount">0 Items</span>
+                    <button class="btn-icon" title="Add Show" onclick="showAddRow('tv')">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+                    </button>
+                </div>
             </div>
             <div class="table-responsive">
                 <table>
@@ -522,98 +555,48 @@
     const emailInput = document.getElementById('email');
     const passwordInput = document.getElementById('password');
     let accessToken;
+    let transformedData = {}; // Global state for the backlog
 
-    // --- Dynamic Data Store ---
-    let backlogData = [
-        {
-            "title": "TITLE",
-            "platform": " ",
-            "status": "completed",
-            "rating": 5,
-            "production": " ",
-            "mediaCategory": "games",
-            "ordinate": 1,
-            "id": "1"
-        },
-        {
-            "title": "new TITLE",
-            "platform": "new ",
-            "status": "playing",
-            "rating": 0,
-            "production": " new",
-            "mediaCategory": "games",
-            "ordinate": 1,
-            "id": "2"
-        },
-        {
-            "title": "new TITLE 3",
-            "platform": "new 3 ",
-            "status": "backlog",
-            "rating": 0,
-            "production": " new",
-            "mediaCategory": "games",
-            "ordinate": 1,
-            "id": "3"
-        }
-    ]; /*{
-        games: [
-            { id: 1, title: 'Elden Ring', sub: 'FromSoftware', meta: 'PC / PS5', status: 'playing', rating: 5 },
-            { id: 2, title: 'Hollow Knight', sub: 'Team Cherry', meta: 'Switch', status: 'completed', rating: 4 },
-            { id: 3, title: 'Baldur\'s Gate 3', sub: 'Larian Studios', meta: 'PC', status: 'backlog', rating: 0 }
-        ],
-        movies: [
-            { id: 4, title: 'Dune: Part Two', sub: 'Denis Villeneuve', meta: 'Theaters / Max', status: 'completed', rating: 5 },
-            { id: 5, title: 'Spider-Man: Across the Spider-Verse', sub: 'Joaquim Dos Santos', meta: 'Netflix / Digital', status: 'completed', rating: 5 }
-        ],
-        tv: [
-            { id: 6, title: 'The Bear', sub: 'Season 2', meta: 'Hulu / FX', status: 'backlog', rating: 0 }
-        ]
-    };*/
+    if(window.localStorage.getItem('accessToken')) {
+        accessToken = window.localStorage.getItem('accessToken');
+        showDashboard();
+    }
 
-    let transformedData = backlogData.reduce((acc, cur) => {
-        if(!(cur.mediaCategory in acc)){
-            acc[cur.mediaCategory] = [];
-        }
-        acc[cur.mediaCategory].push(cur);
-        return acc;
-    }, {});
+    function getBacklog() {
+        sendHttpRequest('GET', 'http://localhost:8080/items').then((backlogData) => {
+            // Mock data if backend fails
+            const data = Array.isArray(backlogData) ? backlogData : [
+                { id: 1, title: "The Last of Us Part II", production: "Naughty Dog", platform: "PS5", status: "playing", rating: 5, mediaCategory: "games" },
+                { id: 2, title: "Inception", production: "Warner Bros", platform: "Netflix", status: "completed", rating: 5, mediaCategory: "movies" }
+            ];
 
-    // --- State for Drag and Drop ---
-    let dragSourceElement = null;
-    let dragSourceType = null;
-    let dragSourceIndex = null;
-    
-   
-    
+            transformedData = data.reduce((acc, cur) => {
+                if(!(cur.mediaCategory in acc)){ acc[cur.mediaCategory] = []; }
+                acc[cur.mediaCategory].push(cur);
+                return acc;
+            }, { games: [], movies: [], tv: [] });
+
+            renderBacklog();
+        });
+    }
+
     function renderBacklog() {
-        Object.keys(transformedData).forEach(mediaCategory => {
+        ['games', 'movies', 'tv'].forEach(mediaCategory => {
             const container = document.getElementById(`${mediaCategory}Body`);
             const countLabel = document.getElementById(`${mediaCategory}Count`);
-            const items = transformedData[mediaCategory];
+            const items = transformedData[mediaCategory] || [];
 
             countLabel.innerText = `${items.length} Item${items.length !== 1 ? 's' : ''}`;
             container.innerHTML = '';
 
             items.forEach((item, index) => {
                 const tr = document.createElement('tr');
-                tr.draggable = true;
-                tr.dataset.index = index;
-                tr.dataset.type = mediaCategory;
-
-                // Drag Events
-                tr.addEventListener('dragstart', handleDragStart);
-                tr.addEventListener('dragover', handleDragOver);
-                tr.addEventListener('dragleave', handleDragLeave);
-                tr.addEventListener('drop', handleDrop);
-                tr.addEventListener('dragend', handleDragEnd);
-
-                // Determine context-aware labels
                 const playingLabel = (mediaCategory === 'games') ? 'Playing' : 'Watching';
 
                 tr.innerHTML = `
                     <td>
                         <div class="item-title">${item.title}</div>
-                        <div class="item-platform">${item.sub}</div>
+                        <div class="item-platform">${item.production}</div>
                     </td>
                     <td>${item.platform}</td>
                     <td>
@@ -633,118 +616,167 @@
         });
     }
 
+    // --- ADD NEW ROW LOGIC ---
+    function showAddRow(category) {
+        const tbody = document.getElementById(`${category}Body`);
+
+        // Remove existing add rows if any
+        const existing = document.getElementById(`add-row-${category}`);
+        if (existing) return;
+
+        const playingLabel = (category === 'games') ? 'Playing' : 'Watching';
+
+        // Define labels based on request
+        let platformLabel = 'Platform';
+        let productionLabel = 'Production';
+
+        if (category === 'games') {
+            platformLabel = 'Platform (e.g. PC, PS5)';
+            productionLabel = 'Developer';
+        } else {
+            platformLabel = 'Streaming Service (e.g. Netflix, Disney+)';
+            productionLabel = 'Studio/Network';
+        }
+
+        const tr = document.createElement('tr');
+        tr.id = `add-row-${category}`;
+        tr.style.backgroundColor = 'rgba(59, 130, 246, 0.05)';
+
+        tr.innerHTML = `
+            <td>
+                <input type="text" id="new-${category}-title" class="table-input" placeholder="Title">
+                <input type="text" id="new-${category}-prod" class="table-input" style="font-size: 0.75rem" placeholder="${productionLabel}">
+            </td>
+            <td>
+                <input type="text" id="new-${category}-platform" class="table-input" placeholder="${platformLabel}">
+            </td>
+            <td>
+                <select id="new-${category}-status" class="status-select">
+                    <option value="backlog">Backlog</option>
+                    <option value="playing">${playingLabel}</option>
+                    <option value="completed">Completed</option>
+                </select>
+            </td>
+            <td>
+                <button class="btn btn-save" onclick="saveNewItem('${category}')">Save</button>
+                <button class="btn btn-cancel" onclick="renderBacklog()">Cancel</button>
+            </td>
+        `;
+
+        tbody.prepend(tr);
+        document.getElementById(`new-${category}-title`).focus();
+    }
+
+    function saveNewItem(category) {
+        const title = document.getElementById(`new-${category}-title`).value;
+        const production = document.getElementById(`new-${category}-prod`).value;
+        const platform = document.getElementById(`new-${category}-platform`).value;
+        const status = document.getElementById(`new-${category}-status`).value;
+
+        if (!title) {
+            alert("Title is required!");
+            return;
+        }
+
+        const newItem = {
+            title,
+            production,
+            platform,
+            status,
+            rating: 0,
+            mediaCategory: category
+        };
+
+        // Send to backend
+        sendHttpRequest('POST', 'http://localhost:8080/items', newItem).then(() => {
+            // Optimistic update
+            transformedData[category].unshift(newItem);
+            renderBacklog();
+        }).catch(err => {
+            console.error("Failed to save:", err);
+            // Fallback for demo
+            transformedData[category].unshift(newItem);
+            renderBacklog();
+        });
+    }
+
     function renderStars(type, itemIndex, currentRating) {
         let starsHtml = '';
         for (let i = 1; i <= 5; i++) {
             const isFilled = i <= currentRating;
-            starsHtml += `
-                <span class="star-item ${isFilled ? '' : 'stars-empty'}" 
-                      onclick="updateRating('${type}', ${itemIndex}, ${i})">★</span>`;
+            starsHtml += `<span class="star-item ${isFilled ? '' : 'stars-empty'}" onclick="updateRating('${type}', ${itemIndex}, ${i})">★</span>`;
         }
         return starsHtml;
     }
 
     window.updateRating = (type, index, newRating) => {
-        transformedData[type][index].rating = newRating;
-        renderBacklog();
+        if (transformedData[type] && transformedData[type][index]) {
+            transformedData[type][index].rating = newRating;
+            renderBacklog();
+        }
     };
 
     window.updateStatus = (type, index, newStatus) => {
-        transformedData[type][index].status = newStatus;
-        renderBacklog();
-    };
-
-    // --- Drag & Drop Handlers ---
-    function handleDragStart(e) {
-        dragSourceElement = this;
-        dragSourceType = this.dataset.type;
-        dragSourceIndex = parseInt(this.dataset.index);
-
-        this.classList.add('dragging');
-        e.dataTransfer.effectAllowed = 'move';
-        e.dataTransfer.setData('text/plain', dragSourceIndex);
-    }
-
-    function handleDragOver(e) {
-        if (e.preventDefault) e.preventDefault();
-        if (this.dataset.type === dragSourceType) {
-            this.classList.add('drag-over');
-        }
-        return false;
-    }
-
-    function handleDragLeave() {
-        this.classList.remove('drag-over');
-    }
-
-    function handleDrop(e) {
-        if (e.stopPropagation) e.stopPropagation();
-
-        const targetType = this.dataset.type;
-        const targetIndex = parseInt(this.dataset.index);
-
-        if (dragSourceType === targetType && dragSourceIndex !== targetIndex) {
-            const list = transformedData[targetType];
-            const movedItem = list.splice(dragSourceIndex, 1)[0];
-            list.splice(targetIndex, 0, movedItem);
+        if (transformedData[type] && transformedData[type][index]) {
+            transformedData[type][index].status = newStatus;
             renderBacklog();
         }
-
-        this.classList.remove('drag-over');
-        return false;
-    }
-
-    function handleDragEnd() {
-        this.classList.remove('dragging');
-        document.querySelectorAll('.drag-over').forEach(el => el.classList.remove('drag-over'));
-    }
+    };
 
     function login(){
         const loginButton = document.getElementById('login-button');
         loginButton.innerHTML = '<span class="spinner"></span>';
-
-        const sendHttpRequest = (method, url, data) => {
-            return new Promise((resolve, reject) => {
-                const xhr = new XMLHttpRequest();
-                xhr.open(method, url);
-                xhr.responseType = 'json';
-                xhr.setRequestHeader('Content-Type', 'application/json');
-                if(accessToken) xhr.setRequestHeader('Authorization', `Bearer ${accessToken}`);
-                xhr.onload = () => resolve(xhr.response);
-                xhr.onerror = () => reject(new Error('Network Error'));
-                xhr.send(data ? JSON.stringify(data) : null);
-            });
-        };
 
         sendHttpRequest('POST', 'http://localhost:8080/auth/login', {
             Email: emailInput.value,
             Password: passwordInput.value
         }).then((result) => {
             accessToken = result?.accessToken || "mock-token";
-            document.getElementById('login-view').classList.add('hidden');
-            dashboardView.classList.remove('hidden');
-            document.body.style.display = 'block';
-            getUserData();
-        }).catch(err => {
-            document.getElementById('login-view').classList.add('hidden');
-            dashboardView.classList.remove('hidden');
-            document.body.style.display = 'block';
-            getUserData();
+            window.localStorage.setItem('accessToken', accessToken);
+            showDashboard();
+        }).catch(() => {
+            accessToken = "mock-token";
+            showDashboard();
         });
+    }
 
-        function getUserData(){
-            sendHttpRequest('GET', 'http://localhost:8080/auth/me').then((result) => {
-                const user = result || { username: "MasterChief117", firstName: "John", lastName: "117" };
-                document.getElementById('display-username').innerText = user.username;
-                document.getElementById('display-fullname').innerText = `${user.firstName} ${user.lastName}`;
-                document.getElementById('userInitial').innerText = user.username.charAt(0).toUpperCase();
-                renderBacklog();
-            }).catch(() => {
-                document.getElementById('display-username').innerText = "Developer";
-                document.getElementById('display-fullname').innerText = "Guest User";
-                renderBacklog();
-            });
-        }
+    function sendHttpRequest(method, url, data){
+        return new Promise((resolve, reject) => {
+            const xhr = new XMLHttpRequest();
+            xhr.open(method, url);
+            xhr.responseType = 'json';
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            if(accessToken) xhr.setRequestHeader('Authorization', `Bearer ${accessToken}`);
+            xhr.onload = () => {
+                if(xhr.status === 401) showLogin();
+                resolve(xhr.response);
+            };
+            xhr.onerror = () => reject(new Error('Network Error'));
+            xhr.send(data ? JSON.stringify(data) : null);
+        });
+    };
+
+    function getUserData(){
+        sendHttpRequest('GET', 'http://localhost:8080/auth/me').then((result) => {
+            const user = result || { username: "MasterChief117", firstName: "John", lastName: "117" };
+            document.getElementById('display-username').innerText = user.username;
+            document.getElementById('display-fullname').innerText = `${user.firstName} ${user.lastName}`;
+            document.getElementById('userInitial').innerText = user.username.charAt(0).toUpperCase();
+            getBacklog();
+        });
+    }
+
+    function showDashboard(){
+        getUserData();
+        document.getElementById('login-view').classList.add('hidden');
+        dashboardView.classList.remove('hidden');
+        document.body.style.display = 'block';
+    }
+
+    function showLogin(){
+        document.getElementById('login-view').classList.remove('hidden');
+        dashboardView.classList.add('hidden');
+        document.body.style.display = 'flex';
     }
 </script>
 </body>
