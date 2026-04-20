@@ -9,13 +9,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="863a48b7-8ded-4d41-92c5-00f7bca30788" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.BacklogDotNet/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BacklogDotNet/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.BacklogDotNet/.idea/dataSources/b133c249-1afb-4bfa-8b07-1be6484bd909.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BacklogDotNet/.idea/dataSources/b133c249-1afb-4bfa-8b07-1be6484bd909.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.BacklogDotNet/.idea/httpRequests/2026-01-16T191653.500.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.BacklogDotNet/.idea/httpRequests/2026-01-16T191903.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.BacklogDotNet/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BacklogDotNet/.idea/httpRequests/http-requests-log.http" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BacklogDotNet/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BacklogDotNet/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BacklogDotNet/BacklogDotNet.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/BacklogDotNet/BacklogDotNet.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BacklogDotNet/BacklogDotNetUI.html" beforeDir="false" afterPath="$PROJECT_DIR$/BacklogDotNet/BacklogDotNetUI.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BacklogDotNet/EndPoints/ItemEndpoints.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BacklogDotNet/EndPoints/ItemEndpoints.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BacklogDotNet/EndPoints/UserEndpoints.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BacklogDotNet/EndPoints/UserEndpoints.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BacklogDotNet/Entities/ItemEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BacklogDotNet/Entities/ItemEntity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BacklogDotNet/Entities/UserEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BacklogDotNet/Entities/UserEntity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BacklogDotNet/Models/ItemModels.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BacklogDotNet/Models/ItemModels.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BacklogDotNet/Models/UserModels.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BacklogDotNet/Models/UserModels.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BacklogDotNet/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BacklogDotNet/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BacklogDotNet/Services/ItemsService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BacklogDotNet/Services/ItemsService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BacklogDotNet/Services/TokenService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BacklogDotNet/Services/TokenService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BacklogDotNet/Services/UserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BacklogDotNet/Services/UserService.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,7 +176,16 @@
       <workItem from="1775502821837" duration="1570000" />
       <workItem from="1775518265230" duration="4866000" />
       <workItem from="1775600212621" duration="4122000" />
-      <workItem from="1775678386500" duration="307000" />
+      <workItem from="1775678386500" duration="609000" />
+      <workItem from="1775684877038" duration="335000" />
+      <workItem from="1775764869130" duration="3923000" />
+      <workItem from="1775847702062" duration="1541000" />
+      <workItem from="1775860393992" duration="206000" />
+      <workItem from="1776296801358" duration="1330000" />
+      <workItem from="1776368054516" duration="1295000" />
+      <workItem from="1776380502831" duration="3800000" />
+      <workItem from="1776451875942" duration="359000" />
+      <workItem from="1776712511646" duration="1346000" />
     </task>
     <servers />
   </component>

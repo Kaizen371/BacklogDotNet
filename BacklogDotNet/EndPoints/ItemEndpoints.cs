@@ -11,15 +11,12 @@ public static class ItemEndpoints
     {
         var group = app.MapGroup("/items").WithTags("Items");
 
+        //Get items
         group.MapGet("", async (ClaimsPrincipal ClaimsPrincipal, ItemsService itemsService) =>
         {
-
             var externalUserId = UserEndpoints.GetUserID(ClaimsPrincipal);
 
-            if (externalUserId == null)
-            {
-                return (IResult)TypedResults.Unauthorized();
-            }
+            if (externalUserId == null) return TypedResults.Unauthorized();
 
             var myItems = await itemsService.GetItems(externalUserId);
 
@@ -44,17 +41,15 @@ public static class ItemEndpoints
             return (IResult)TypedResults.Ok(itemList);
         }).RequireAuthorization();
 
+        //Add items
         group.MapPost("", async (ClaimsPrincipal ClaimsPrincipal, ItemsService itemsService, ItemModel itemModel) =>
         {
             var externalUserId = UserEndpoints.GetUserID(ClaimsPrincipal);
 
-            if (externalUserId == null)
-            {
-                return (IResult)TypedResults.Unauthorized();
-            }
-            
+            if (externalUserId == null) return TypedResults.Unauthorized();
+
             var item = new ItemEntity(
-                itemModel.platform, 
+                itemModel.platform,
                 itemModel.title,
                 itemModel.status,
                 itemModel.rating,
@@ -64,14 +59,42 @@ public static class ItemEndpoints
                 itemModel.ordinate,
                 null);
 
-            ItemEntity newItem = await itemsService.addItem(item);
+            var newItem = await itemsService.addItem(item);
 
             var newItemModel = itemModel with { ID = newItem.ID };
-            
-            return (IResult)TypedResults.Ok(newItemModel);
 
+            return (IResult)TypedResults.Ok(newItemModel);
         }).RequireAuthorization();
-        
-        /*group.MapDelete("", async (ClaimsPrincipal claimsPrincipal, ItemsService itemsService, ) =>)*/
+
+        //remove items
+        group.MapDelete("/{ID}", async (ItemsService itemsService, string ID) =>
+        {
+            if (await itemsService.removeItem(ID) > 0) return TypedResults.Ok();
+
+            return (IResult)TypedResults.NotFound();
+        }).RequireAuthorization();
+
+        group.MapPut("/{ID}", async (ItemsService itemsService, ItemModel itemModel, ClaimsPrincipal claimsPrincipal) =>
+        {
+            var externalUserId = UserEndpoints.GetUserID(claimsPrincipal);
+
+            if (externalUserId == null) return TypedResults.Unauthorized();
+
+            var item = new ItemEntity(
+                itemModel.platform,
+                itemModel.title,
+                itemModel.status,
+                itemModel.rating,
+                externalUserId,
+                itemModel.production,
+                itemModel.mediaCategory,
+                itemModel.ordinate,
+                itemModel.ID);
+
+            await itemsService.editItem(item);
+
+
+            return (IResult)TypedResults.Ok(itemModel);
+        }).RequireAuthorization();
     }
 }

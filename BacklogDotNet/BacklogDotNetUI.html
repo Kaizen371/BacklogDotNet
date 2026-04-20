@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>Dashboard | Backloggd Inspired</title>
-    <!-- Google Fonts -->
+    
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* CSS Variables */
+        
         :root {
             --bg-body: #121417;
             --bg-card: #1a1d21;
@@ -41,7 +41,7 @@
             padding: 20px;
         }
 
-        /* --- LOGIN VIEW --- */
+       
         .login-view {
             width: 100%;
             max-width: 420px;
@@ -70,7 +70,9 @@
             margin-bottom: 8px;
         }
 
-        .logo span { color: var(--accent); }
+        .logo span {
+            color: var(--accent);
+        }
 
         .subtitle {
             font-size: 0.95rem;
@@ -78,7 +80,9 @@
             font-weight: 400;
         }
 
-        .form-group { margin-bottom: 20px; }
+        .form-group {
+            margin-bottom: 20px;
+        }
 
         .label-row {
             display: flex;
@@ -118,7 +122,7 @@
             box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
         }
 
-        /* Small Inputs for the table */
+        
         .table-input {
             padding: 8px 12px;
             font-size: 0.85rem;
@@ -141,9 +145,21 @@
             font-family: inherit;
         }
 
-        .btn:active { transform: scale(0.98); }
-        .btn-primary { background-color: var(--accent); color: white; margin-top: 10px; }
-        .btn-discord { background-color: var(--discord); color: white; margin-top: 12px; }
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: white;
+            margin-top: 10px;
+        }
+
+        .btn-discord {
+            background-color: var(--discord);
+            color: white;
+            margin-top: 12px;
+        }
 
         .btn-icon {
             width: 36px;
@@ -157,6 +173,7 @@
             align-items: center;
             justify-content: center;
             transition: all 0.2s;
+            cursor: pointer;
         }
 
         .btn-icon:hover {
@@ -191,17 +208,6 @@
             margin: 28px 0;
         }
 
-        .divider::before {
-            content: "";
-            position: absolute;
-            top: 50%;
-            left: 0;
-            width: 100%;
-            height: 1px;
-            background-color: var(--border);
-            z-index: 1;
-        }
-
         .divider span {
             position: relative;
             background-color: var(--bg-card);
@@ -221,11 +227,22 @@
             color: var(--text-muted);
         }
 
-        .login-footer a { color: var(--text-primary); text-decoration: none; font-weight: 600; }
+        .login-footer a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
 
-        .hidden { display: none !important; }
+        .hidden {
+            display: none !important;
+        }
 
-        @keyframes spin { to { transform: rotate(360deg); } }
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
         .spinner {
             width: 20px;
             height: 20px;
@@ -235,7 +252,7 @@
             animation: spin 0.8s linear infinite;
         }
 
-        /* --- DASHBOARD VIEW --- */
+        
         .dashboard-view {
             width: 100%;
             max-width: 1200px;
@@ -272,9 +289,21 @@
             font-weight: 700;
         }
 
-        .user-info-text { display: flex; flex-direction: column; }
-        .display-username { font-weight: 700; color: var(--text-primary); font-size: 1rem; }
-        .display-fullname { color: var(--text-muted); font-size: 0.8rem; }
+        .user-info-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .display-username {
+            font-weight: 700;
+            color: var(--text-primary);
+            font-size: 1rem;
+        }
+
+        .display-fullname {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
 
         .logout-btn {
             background: none;
@@ -288,7 +317,7 @@
             margin-top: 2px;
         }
 
-        /* Backlog Section Grid */
+        
         .backlog-container {
             margin-top: 80px;
             display: grid;
@@ -342,7 +371,7 @@
             font-weight: 600;
         }
 
-        /* Table Styling */
+        
         .table-responsive {
             overflow-x: auto;
         }
@@ -370,9 +399,30 @@
             vertical-align: middle;
         }
 
-        tr:last-child td { border-bottom: none; }
+        tr:last-child td {
+            border-bottom: none;
+        }
 
-        /* Status Select Styling */
+        
+        tbody tr {
+            cursor: grab;
+            transition: background-color 0.2s, opacity 0.2s;
+        }
+
+        tbody tr:active {
+            cursor: grabbing;
+        }
+
+        .dragging {
+            opacity: 0.4;
+            background-color: var(--bg-input) !important;
+        }
+
+        .drag-over {
+            border-top: 2px solid var(--accent) !important;
+        }
+
+        
         .status-select {
             background-color: var(--bg-input);
             border: 1px solid var(--border);
@@ -393,11 +443,24 @@
             padding-right: 28px;
         }
 
-        .status-select:focus { border-color: var(--accent); }
+        .status-select:focus {
+            border-color: var(--accent);
+        }
 
-        .status-backlog-color { color: #60a5fa !important; border-color: rgba(59, 130, 246, 0.3); }
-        .status-playing-color { color: #34d399 !important; border-color: rgba(16, 185, 129, 0.3); }
-        .status-completed-color { color: #a78bfa !important; border-color: rgba(139, 92, 246, 0.3); }
+        .status-backlog-color {
+            color: #60a5fa !important;
+            border-color: rgba(59, 130, 246, 0.3);
+        }
+
+        .status-playing-color {
+            color: #34d399 !important;
+            border-color: rgba(16, 185, 129, 0.3);
+        }
+
+        .status-completed-color {
+            color: #a78bfa !important;
+            border-color: rgba(139, 92, 246, 0.3);
+        }
 
         .stars {
             color: var(--star-gold);
@@ -406,15 +469,83 @@
             white-space: nowrap;
         }
 
-        .star-item { cursor: pointer; transition: transform 0.1s; display: inline-block; }
-        .star-item:hover { transform: scale(1.3); }
-        .stars-empty { color: var(--border); }
+        .star-item {
+            cursor: pointer;
+            transition: transform 0.1s;
+            display: inline-block;
+        }
 
-        .item-title { font-weight: 600; color: var(--text-primary); }
-        .item-platform { font-size: 0.8rem; color: var(--text-muted); }
+        .star-item:hover {
+            transform: scale(1.3);
+        }
+
+        .stars-empty {
+            color: var(--border);
+        }
+
+        .item-title {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .item-platform {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        
+        .actions-cell {
+            text-align: right;
+            position: relative;
+        }
+
+        .action-dropdown {
+            position: absolute;
+            right: 24px;
+            top: 100%;
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            z-index: 50;
+            min-width: 120px;
+            display: none;
+            overflow: hidden;
+        }
+
+        .action-dropdown.show {
+            display: block;
+        }
+
+        .action-item {
+            padding: 10px 16px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            cursor: pointer;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: background 0.2s;
+        }
+
+        .action-item:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+            color: var(--text-primary);
+        }
+
+        .action-item.delete {
+            color: var(--danger);
+        }
+
+        .action-item.delete:hover {
+            background-color: rgba(239, 68, 68, 0.1);
+        }
 
         @media (min-width: 1024px) {
-            .backlog-container { grid-template-columns: repeat(1, 1fr); }
+            .backlog-container {
+                grid-template-columns: repeat(1, 1fr);
+            }
         }
     </style>
 </head>
@@ -423,25 +554,25 @@
 <div class="login-view" id="login-view">
     <div class="login-card">
         <header class="login-header">
-            <a href="#" class="logo">Backlog<span>gd</span></a>
+            <a class="logo" href="#">Backlog<span>gd</span></a>
             <p class="subtitle">Keep track of every game you play.</p>
         </header>
 
         <form id="loginForm">
             <div class="form-group">
                 <label for="email">Email or Username</label>
-                <input type="text" id="email" placeholder="e.g. MasterChief117" required>
+                <input id="email" placeholder="e.g. MasterChief117" required type="text">
             </div>
 
             <div class="form-group">
                 <div class="label-row">
                     <label for="password">Password</label>
-                    <a href="#" class="forgot-link">Forgot?</a>
+                    <a class="forgot-link" href="#">Forgot?</a>
                 </div>
-                <input type="password" id="password" placeholder="••••••••" required>
+                <input id="password" placeholder="••••••••" required type="password">
             </div>
 
-            <button type="button" id="login-button" class="btn btn-primary" onclick="login()">Sign In</button>
+            <button class="btn btn-primary" id="login-button" onclick="login()" type="button">Sign In</button>
         </form>
 
         <div class="divider"><span>OR</span></div>
@@ -458,22 +589,29 @@
         <div class="user-info-text">
             <span class="display-username" id="display-username">Loading...</span>
             <span class="display-fullname" id="display-fullname">Please wait</span>
-            <button class="logout-btn" onclick="location.reload()">Sign Out</button>
+            <button class="logout-btn" onclick="logout()">Sign Out</button>
         </div>
     </div>
 
     <div class="backlog-container">
-        <!-- SECTIONS -->
+        
         <section class="backlog-card" id="gamesCard">
             <div class="card-header">
                 <div class="card-title">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 12h.01M9 12h.01M15 12h.01M18 12h.01M4 16h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2z"/><path d="M6 20l2-4M18 20l-2-4"/></svg>
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                         viewBox="0 0 24 24">
+                        <path d="M6 12h.01M9 12h.01M15 12h.01M18 12h.01M4 16h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2z"/>
+                        <path d="M6 20l2-4M18 20l-2-4"/>
+                    </svg>
                     Games
                 </div>
                 <div class="header-actions">
                     <span class="card-count" id="gamesCount">0 Items</span>
-                    <button class="btn-icon" title="Add Game" onclick="showAddRow('games')">
-                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+                    <button class="btn-icon" onclick="showAddRow('games')" title="Add Game">
+                        <svg fill="none" height="20" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"
+                             width="20">
+                            <path d="M12 5v14M5 12h14"/>
+                        </svg>
                     </button>
                 </div>
             </div>
@@ -485,9 +623,10 @@
                         <th>Platform</th>
                         <th>Status</th>
                         <th>Rating</th>
+                        <th style="width: 60px"></th>
                     </tr>
                     </thead>
-                    <tbody id="gamesBody" data-type="games"></tbody>
+                    <tbody data-type="games" id="gamesBody"></tbody>
                 </table>
             </div>
         </section>
@@ -495,13 +634,26 @@
         <section class="backlog-card" id="moviesCard">
             <div class="card-header">
                 <div class="card-title">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="2" y1="7" x2="7" y2="7"/><line x1="2" y1="17" x2="7" y2="17"/><line x1="17" y1="17" x2="22" y2="17"/><line x1="17" y1="7" x2="22" y2="7"/></svg>
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                         viewBox="0 0 24 24">
+                        <rect height="20" rx="2.18" ry="2.18" width="20" x="2" y="2"/>
+                        <line x1="7" x2="7" y1="2" y2="22"/>
+                        <line x1="17" x2="17" y1="2" y2="22"/>
+                        <line x1="2" x2="22" y1="12" y2="12"/>
+                        <line x1="2" x2="7" y1="7" y2="7"/>
+                        <line x1="2" x2="7" y1="17" y2="17"/>
+                        <line x1="17" x2="22" y1="17" y2="17"/>
+                        <line x1="17" x2="22" y1="7" y2="7"/>
+                    </svg>
                     Movies
                 </div>
                 <div class="header-actions">
                     <span class="card-count" id="moviesCount">0 Items</span>
-                    <button class="btn-icon" title="Add Movie" onclick="showAddRow('movies')">
-                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+                    <button class="btn-icon" onclick="showAddRow('movies')" title="Add Movie">
+                        <svg fill="none" height="20" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"
+                             width="20">
+                            <path d="M12 5v14M5 12h14"/>
+                        </svg>
                     </button>
                 </div>
             </div>
@@ -513,9 +665,10 @@
                         <th>Platform</th>
                         <th>Status</th>
                         <th>Rating</th>
+                        <th style="width: 60px"></th>
                     </tr>
                     </thead>
-                    <tbody id="moviesBody" data-type="movies"></tbody>
+                    <tbody data-type="movies" id="moviesBody"></tbody>
                 </table>
             </div>
         </section>
@@ -523,13 +676,20 @@
         <section class="backlog-card" id="tvCard">
             <div class="card-header">
                 <div class="card-title">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="15" rx="2" ry="2"/><polyline points="17 2 12 7 7 2"/></svg>
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                         viewBox="0 0 24 24">
+                        <rect height="15" rx="2" ry="2" width="20" x="2" y="7"/>
+                        <polyline points="17 2 12 7 7 2"/>
+                    </svg>
                     TV Shows
                 </div>
                 <div class="header-actions">
                     <span class="card-count" id="tvCount">0 Items</span>
-                    <button class="btn-icon" title="Add Show" onclick="showAddRow('tv')">
-                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+                    <button class="btn-icon" onclick="showAddRow('tv')" title="Add Show">
+                        <svg fill="none" height="20" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"
+                             width="20">
+                            <path d="M12 5v14M5 12h14"/>
+                        </svg>
                     </button>
                 </div>
             </div>
@@ -541,9 +701,10 @@
                         <th>Platform</th>
                         <th>Status</th>
                         <th>Rating</th>
+                        <th style="width: 60px"></th>
                     </tr>
                     </thead>
-                    <tbody id="tvBody" data-type="tv"></tbody>
+                    <tbody data-type="tv" id="tvBody"></tbody>
                 </table>
             </div>
         </section>
@@ -555,26 +716,38 @@
     const emailInput = document.getElementById('email');
     const passwordInput = document.getElementById('password');
     let accessToken;
-    let transformedData = {}; // Global state for the backlog
+    let transformedData = {games: [], movies: [], tv: []};
+    let activeDropdown = null;
+    let draggedItemInfo = null; 
 
-    if(window.localStorage.getItem('accessToken')) {
+    if (window.localStorage.getItem('accessToken')) {
         accessToken = window.localStorage.getItem('accessToken');
         showDashboard();
     }
 
+    
+    window.addEventListener('click', (e) => {
+        if (!e.target.closest('.actions-cell') && activeDropdown) {
+            activeDropdown.classList.remove('show');
+            activeDropdown = null;
+        }
+    });
+
     function getBacklog() {
         sendHttpRequest('GET', 'http://localhost:8080/items').then((backlogData) => {
-            // Mock data if backend fails
-            const data = Array.isArray(backlogData) ? backlogData : [
-                { id: 1, title: "The Last of Us Part II", production: "Naughty Dog", platform: "PS5", status: "playing", rating: 5, mediaCategory: "games" },
-                { id: 2, title: "Inception", production: "Warner Bros", platform: "Netflix", status: "completed", rating: 5, mediaCategory: "movies" }
-            ];
-
+            const data = Array.isArray(backlogData) ? backlogData : [];
             transformedData = data.reduce((acc, cur) => {
-                if(!(cur.mediaCategory in acc)){ acc[cur.mediaCategory] = []; }
+                if (!(cur.mediaCategory in acc)) {
+                    acc[cur.mediaCategory] = [];
+                }
                 acc[cur.mediaCategory].push(cur);
                 return acc;
-            }, { games: [], movies: [], tv: [] });
+            }, {games: [], movies: [], tv: []});
+
+            
+            Object.keys(transformedData).forEach(cat => {
+                transformedData[cat].sort((a, b) => (a.ordinate || 0) - (b.ordinate || 0));
+            });
 
             renderBacklog();
         });
@@ -586,29 +759,55 @@
             const countLabel = document.getElementById(`${mediaCategory}Count`);
             const items = transformedData[mediaCategory] || [];
 
+            
+            items.sort((a, b) => (a.ordinate || 0) - (b.ordinate || 0));
+
             countLabel.innerText = `${items.length} Item${items.length !== 1 ? 's' : ''}`;
             container.innerHTML = '';
 
             items.forEach((item, index) => {
                 const tr = document.createElement('tr');
-                const playingLabel = (mediaCategory === 'games') ? 'Playing' : 'Watching';
+                tr.draggable = true;
+                tr.dataset.index = index;
+                tr.dataset.category = mediaCategory;
 
+                
+                tr.ondragstart = (e) => handleDragStart(e, mediaCategory, index);
+                tr.ondragover = (e) => handleDragOver(e);
+                tr.ondragleave = (e) => handleDragLeave(e);
+                tr.ondrop = (e) => handleDrop(e, mediaCategory, index);
+                tr.ondragend = (e) => handleDragEnd(e);
+
+                const playingLabel = (mediaCategory === 'games') ? 'Playing' : 'Watching';
                 tr.innerHTML = `
-                    <td>
-                        <div class="item-title">${item.title}</div>
-                        <div class="item-platform">${item.production}</div>
-                    </td>
+                    <td><div class="item-title">${item.title}</div><div class="item-platform">${item.production}</div></td>
                     <td>${item.platform}</td>
                     <td>
-                        <select class="status-select status-${item.status}-color" 
-                                onchange="updateStatus('${mediaCategory}', ${index}, this.value)">
+                        <select class="status-select status-${item.status}-color" onchange="updateStatus('${mediaCategory}', ${index}, this.value)">
                             <option value="backlog" ${item.status === 'backlog' ? 'selected' : ''}>Backlog</option>
                             <option value="playing" ${item.status === 'playing' ? 'selected' : ''}>${playingLabel}</option>
                             <option value="completed" ${item.status === 'completed' ? 'selected' : ''}>Completed</option>
                         </select>
                     </td>
-                    <td class="stars">
-                        ${renderStars(mediaCategory, index, item.rating)}
+                    <td class="stars">${renderStars(mediaCategory, index, item.rating)}</td>
+                    <td class="actions-cell">
+                        <button class="btn-icon" onclick="toggleDropdown(event, '${mediaCategory}', ${index})">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="4" y1="12" x2="20" y2="12"></line>
+                                <line x1="4" y1="6" x2="20" y2="6"></line>
+                                <line x1="4" y1="18" x2="20" y2="18"></line>
+                            </svg>
+                        </button>
+                        <div class="action-dropdown" id="dropdown-${mediaCategory}-${index}">
+                            <div class="action-item" onclick="startEditItem('${mediaCategory}', ${index})">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+                                Edit
+                            </div>
+                            <div class="action-item delete" onclick="deleteItem('${mediaCategory}', ${index})">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+                                Delete
+                            </div>
+                        </div>
                     </td>
                 `;
                 container.appendChild(tr);
@@ -616,67 +815,173 @@
         });
     }
 
-    // --- ADD NEW ROW LOGIC ---
+    
+
+    function handleDragStart(e, category, index) {
+        draggedItemInfo = {category, index};
+        e.target.classList.add('dragging');
+        
+        e.dataTransfer.effectAllowed = 'move';
+        e.dataTransfer.setData('text/plain', index);
+    }
+
+    function handleDragOver(e) {
+        e.preventDefault();
+        e.dataTransfer.dropEffect = 'move';
+        const tr = e.target.closest('tr');
+        if (tr && !tr.classList.contains('dragging')) {
+            tr.classList.add('drag-over');
+        }
+    }
+
+    function handleDragLeave(e) {
+        const tr = e.target.closest('tr');
+        if (tr) {
+            tr.classList.remove('drag-over');
+        }
+    }
+
+    function handleDragEnd(e) {
+        e.target.classList.remove('dragging');
+        
+        document.querySelectorAll('.drag-over').forEach(el => el.classList.remove('drag-over'));
+    }
+
+    function handleDrop(e, category, targetIndex) {
+        e.preventDefault();
+        const tr = e.target.closest('tr');
+        if (tr) tr.classList.remove('drag-over');
+
+        if (!draggedItemInfo || draggedItemInfo.category !== category) return;
+
+        const sourceIndex = draggedItemInfo.index;
+        if (sourceIndex === targetIndex) return;
+
+        
+        const list = transformedData[category];
+        const [movedItem] = list.splice(sourceIndex, 1);
+        list.splice(targetIndex, 0, movedItem);
+
+        
+        list.forEach((item, idx) => {
+            item.ordinate = idx;
+        });
+
+        
+        Promise.all(list.map(item =>
+            sendHttpRequest('PUT', `http://localhost:8080/items/${item.id}`, item)
+        )).then(() => {
+            renderBacklog();
+        }).catch(err => {
+            console.error("Failed to persist new order:", err);
+            renderBacklog(); 
+        });
+
+        draggedItemInfo = null;
+    }
+
+    
+
+    function toggleDropdown(e, category, index) {
+        e.stopPropagation();
+        const dropdown = document.getElementById(`dropdown-${category}-${index}`);
+        if (activeDropdown && activeDropdown !== dropdown) {
+            activeDropdown.classList.remove('show');
+        }
+        dropdown.classList.toggle('show');
+        activeDropdown = dropdown.classList.contains('show') ? dropdown : null;
+    }
+
     function showAddRow(category) {
         const tbody = document.getElementById(`${category}Body`);
+        if (document.getElementById(`add-row-${category}`)) return;
 
-        // Remove existing add rows if any
-        const existing = document.getElementById(`add-row-${category}`);
-        if (existing) return;
-
-        const playingLabel = (category === 'games') ? 'Playing' : 'Watching';
-
-        // Define labels based on request
-        let platformLabel = 'Platform';
-        let productionLabel = 'Production';
-
-        if (category === 'games') {
-            platformLabel = 'Platform (e.g. PC, PS5)';
-            productionLabel = 'Developer';
-        } else {
-            platformLabel = 'Streaming Service (e.g. Netflix, Disney+)';
-            productionLabel = 'Studio/Network';
+        if (activeDropdown) {
+            activeDropdown.classList.remove('show');
+            activeDropdown = null;
         }
 
+        const playingLabel = (category === 'games') ? 'Playing' : 'Watching';
+        let platformLabel = category === 'games' ? 'Platform (e.g. PC, PS5)' : 'Streaming Service';
+        let productionLabel = category === 'games' ? 'Developer' : 'Studio/Network';
         const tr = document.createElement('tr');
         tr.id = `add-row-${category}`;
         tr.style.backgroundColor = 'rgba(59, 130, 246, 0.05)';
-
         tr.innerHTML = `
+            <td><input type="text" id="new-${category}-title" class="table-input" placeholder="Title"><input type="text" id="new-${category}-prod" class="table-input" style="font-size: 0.75rem" placeholder="${productionLabel}"></td>
+            <td><input type="text" id="new-${category}-platform" class="table-input" placeholder="${platformLabel}"></td>
+            <td><select id="new-${category}-status" class="status-select"><option value="backlog">Backlog</option><option value="playing">${playingLabel}</option><option value="completed">Completed</option></select></td>
+            <td colspan="2"><button class="btn btn-save" onclick="saveNewItem('${category}')">Save</button><button class="btn btn-cancel" onclick="renderBacklog()">Cancel</button></td>
+        `;
+        tbody.prepend(tr);
+        document.getElementById(`new-${category}-title`).focus();
+    }
+
+    function startEditItem(category, index) {
+        if (activeDropdown) {
+            activeDropdown.classList.remove('show');
+            activeDropdown = null;
+        }
+
+        const item = transformedData[category][index];
+        const tbody = document.getElementById(`${category}Body`);
+        const targetRow = tbody.children[index];
+
+        const playingLabel = (category === 'games') ? 'Playing' : 'Watching';
+        let platformLabel = category === 'games' ? 'Platform' : 'Streaming Service';
+        let productionLabel = category === 'games' ? 'Developer' : 'Studio/Network';
+
+        targetRow.style.backgroundColor = 'rgba(59, 130, 246, 0.05)';
+        targetRow.draggable = false; 
+        targetRow.innerHTML = `
+            <td><input type="text" id="edit-${category}-title" class="table-input" value="${item.title}"><input type="text" id="edit-${category}-prod" class="table-input" style="font-size: 0.75rem" value="${item.production}" placeholder="${productionLabel}"></td>
+            <td><input type="text" id="edit-${category}-platform" class="table-input" value="${item.platform}" placeholder="${platformLabel}"></td>
             <td>
-                <input type="text" id="new-${category}-title" class="table-input" placeholder="Title">
-                <input type="text" id="new-${category}-prod" class="table-input" style="font-size: 0.75rem" placeholder="${productionLabel}">
-            </td>
-            <td>
-                <input type="text" id="new-${category}-platform" class="table-input" placeholder="${platformLabel}">
-            </td>
-            <td>
-                <select id="new-${category}-status" class="status-select">
-                    <option value="backlog">Backlog</option>
-                    <option value="playing">${playingLabel}</option>
-                    <option value="completed">Completed</option>
+                <select id="edit-${category}-status" class="status-select">
+                    <option value="backlog" ${item.status === 'backlog' ? 'selected' : ''}>Backlog</option>
+                    <option value="playing" ${item.status === 'playing' ? 'selected' : ''}>${playingLabel}</option>
+                    <option value="completed" ${item.status === 'completed' ? 'selected' : ''}>Completed</option>
                 </select>
             </td>
-            <td>
-                <button class="btn btn-save" onclick="saveNewItem('${category}')">Save</button>
+            <td colspan="2">
+                <button class="btn btn-save" onclick="updateItem('${category}', ${index})">Update</button>
                 <button class="btn btn-cancel" onclick="renderBacklog()">Cancel</button>
             </td>
         `;
+        document.getElementById(`edit-${category}-title`).focus();
+    }
 
-        tbody.prepend(tr);
-        document.getElementById(`new-${category}-title`).focus();
+    function updateItem(category, index) {
+        const title = document.getElementById(`edit-${category}-title`).value;
+        const production = document.getElementById(`edit-${category}-prod`).value;
+        const platform = document.getElementById(`edit-${category}-platform`).value;
+        const status = document.getElementById(`edit-${category}-status`).value;
+
+        if (!title) return;
+        updateModel({title, production, platform, status}, category, index);
+    }
+
+    function deleteItem(category, index) {
+        if (!confirm('Are you sure you want to remove this item?')) return;
+        const itemToDelete = transformedData[category][index];
+        sendHttpRequest('DELETE', 'http://localhost:8080/items/' + itemToDelete.id).then(() => {
+            transformedData[category].splice(index, 1);
+            
+            transformedData[category].forEach((item, idx) => item.ordinate = idx);
+            renderBacklog();
+        }).catch((err) => console.log(err));
     }
 
     function saveNewItem(category) {
         const title = document.getElementById(`new-${category}-title`).value;
         const production = document.getElementById(`new-${category}-prod`).value;
         const platform = document.getElementById(`new-${category}-platform`).value;
-        const status = document.getElementById(`new-${category}-status`).value;
+        const status = document.getElementById('new-' + category + '-status').value;
+        if (!title) return;
 
-        if (!title) {
-            alert("Title is required!");
-            return;
-        }
+        
+        const newOrdinate = 0;
+        transformedData[category].forEach(item => item.ordinate++);
 
         const newItem = {
             title,
@@ -684,20 +989,15 @@
             platform,
             status,
             rating: 0,
-            mediaCategory: category
+            mediaCategory: category,
+            ordinate: newOrdinate
         };
-
-        // Send to backend
-        sendHttpRequest('POST', 'http://localhost:8080/items', newItem).then(() => {
-            // Optimistic update
+        sendHttpRequest('POST', 'http://localhost:8080/items', newItem).then((res) => {
+            
+            if (res && res.id) newItem.id = res.id;
             transformedData[category].unshift(newItem);
             renderBacklog();
-        }).catch(err => {
-            console.error("Failed to save:", err);
-            // Fallback for demo
-            transformedData[category].unshift(newItem);
-            renderBacklog();
-        });
+        }).catch((err) => console.log(err));
     }
 
     function renderStars(type, itemIndex, currentRating) {
@@ -709,24 +1009,21 @@
         return starsHtml;
     }
 
-    window.updateRating = (type, index, newRating) => {
-        if (transformedData[type] && transformedData[type][index]) {
-            transformedData[type][index].rating = newRating;
-            renderBacklog();
+    function updateRating(category, index, newRating) {
+        if (transformedData[category] && transformedData[category][index]) {
+            updateModel({rating: newRating}, category, index);
         }
-    };
+    }
 
-    window.updateStatus = (type, index, newStatus) => {
-        if (transformedData[type] && transformedData[type][index]) {
-            transformedData[type][index].status = newStatus;
-            renderBacklog();
+    function updateStatus(category, index, newStatus) {
+        if (transformedData[category] && transformedData[category][index]) {
+            updateModel({status: newStatus}, category, index);
         }
-    };
+    }
 
-    function login(){
+    function login() {
         const loginButton = document.getElementById('login-button');
         loginButton.innerHTML = '<span class="spinner"></span>';
-
         sendHttpRequest('POST', 'http://localhost:8080/auth/login', {
             Email: emailInput.value,
             Password: passwordInput.value
@@ -740,25 +1037,35 @@
         });
     }
 
-    function sendHttpRequest(method, url, data){
+    async function logout() {
+        window.localStorage.removeItem('accessToken');
+        accessToken = null;
+        emailInput.value = '';
+        passwordInput.value = '';
+        const loginButton = document.getElementById('login-button');
+        loginButton.innerHTML = 'Sign In';
+        showLogin();
+    }
+
+    function sendHttpRequest(method, url, data) {
         return new Promise((resolve, reject) => {
             const xhr = new XMLHttpRequest();
             xhr.open(method, url);
             xhr.responseType = 'json';
             xhr.setRequestHeader('Content-Type', 'application/json');
-            if(accessToken) xhr.setRequestHeader('Authorization', `Bearer ${accessToken}`);
+            if (accessToken) xhr.setRequestHeader('Authorization', `Bearer ${accessToken}`);
             xhr.onload = () => {
-                if(xhr.status === 401) showLogin();
+                if (xhr.status === 401) logout();
                 resolve(xhr.response);
             };
             xhr.onerror = () => reject(new Error('Network Error'));
             xhr.send(data ? JSON.stringify(data) : null);
         });
-    };
+    }
 
-    function getUserData(){
+    function getUserData() {
         sendHttpRequest('GET', 'http://localhost:8080/auth/me').then((result) => {
-            const user = result || { username: "MasterChief117", firstName: "John", lastName: "117" };
+            const user = result || {username: "MasterChief117", firstName: "John", lastName: "117"};
             document.getElementById('display-username').innerText = user.username;
             document.getElementById('display-fullname').innerText = `${user.firstName} ${user.lastName}`;
             document.getElementById('userInitial').innerText = user.username.charAt(0).toUpperCase();
@@ -766,17 +1073,31 @@
         });
     }
 
-    function showDashboard(){
+    function showDashboard() {
         getUserData();
         document.getElementById('login-view').classList.add('hidden');
         dashboardView.classList.remove('hidden');
         document.body.style.display = 'block';
     }
 
-    function showLogin(){
+    function showLogin() {
         document.getElementById('login-view').classList.remove('hidden');
         dashboardView.classList.add('hidden');
         document.body.style.display = 'flex';
+    }
+
+    function updateModel(updates, category, index) {
+        const updatedItem = {
+            ...transformedData[category][index],
+            ...updates,
+        };
+
+        sendHttpRequest('PUT', 'http://localhost:8080/items/' + updatedItem.id, updatedItem).then(() => {
+            transformedData[category][index] = updatedItem;
+            renderBacklog();
+        }).catch((err) => {
+            console.log(err);
+        });
     }
 </script>
 </body>
