@@ -315,10 +315,18 @@ function login() {
     sendHttpRequest('POST', 'http://localhost:8080/auth/login', {
         Email: emailInput.value,
         Password: passwordInput.value
-    }).then((result) => {
-        accessToken = result?.accessToken || "mock-token";
-        window.localStorage.setItem('accessToken', accessToken);
-        showDashboard();
+    }, (xhr) => {
+        if(xhr.status === 200) {
+            const result = xhr.response;
+            accessToken = result?.accessToken || "mock-token";
+            window.localStorage.setItem('accessToken', accessToken);
+            document.getElementById('passErr').innerText = "";
+            showDashboard();
+        }
+        else{
+            document.getElementById('passErr').innerText = "Login failed, please try again";
+            loginButton.innerText = "Sign in";
+        }
     }).catch(() => {
         accessToken = "mock-token";
         showDashboard();
@@ -335,7 +343,7 @@ async function logout() {
     showLogin();
 }
 
-function sendHttpRequest(method, url, data) {
+function sendHttpRequest(method, url, data, alternateResolve) {
     return new Promise((resolve, reject) => {
         const xhr = new XMLHttpRequest();
         xhr.open(method, url);
@@ -343,8 +351,13 @@ function sendHttpRequest(method, url, data) {
         xhr.setRequestHeader('Content-Type', 'application/json');
         if (accessToken) xhr.setRequestHeader('Authorization', `Bearer ${accessToken}`);
         xhr.onload = () => {
-            if (xhr.status === 401) logout();
-            resolve(xhr.response);
+            if (alternateResolve) { 
+                alternateResolve(xhr);
+            }
+            else { 
+                if (xhr.status === 401) logout();
+                resolve(xhr.response);
+            }
         };
         xhr.onerror = () => reject(new Error('Network Error'));
         xhr.send(data ? JSON.stringify(data) : null);
