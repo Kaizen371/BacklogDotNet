@@ -48,7 +48,11 @@ var app = builder.Build();
 app.UseCors("AllowRider");
 app.UseAuthentication();
 app.UseAuthorization();
+app.UseDefaultFiles();
+app.UseStaticFiles();
 app.MapUserEndpoints();
 app.MapItemEndpoints();
+
+
 
 app.Run();

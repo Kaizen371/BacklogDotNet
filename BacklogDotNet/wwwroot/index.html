@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Dashboard | Backloggd Inspired</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="login-view" id="login-view">
+    <div class="login-card">
+        <header class="login-header">
+            <a class="logo" href="#">Backlog<span>gd</span></a>
+            <p class="subtitle">Keep track of every game you play.</p>
+        </header>
+
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="email">Email or Username</label>
+                <input id="email" placeholder="e.g. MasterChief117" required type="text">
+            </div>
+
+            <div class="form-group">
+                <div class="label-row">
+                    <label for="password">Password</label>
+                    <!-- <a class="forgot-link" href="#">Forgot?</a> -->
+                </div>
+                <input id="password" placeholder="••••••••" required type="password">
+            </div>
+
+            <button class="btn btn-primary" id="login-button" onclick="login()" type="button">Sign In</button>
+        </form>
+
+       <!-- <div class="divider"><span>OR</span></div>
+        <button class="btn btn-discord">Sign in with Discord</button>
+        <footer class="login-footer">
+            Don't have an account? <a href="#">Create one</a>
+        </footer> -->
+    </div>
+</div>
+
+<div class="dashboard-view hidden" id="dashboardView">
+    <div class="user-profile-badge">
+        <div class="avatar-placeholder" id="userInitial">?</div>
+        <div class="user-info-text">
+            <span class="display-username" id="display-username">Loading...</span>
+            <span class="display-fullname" id="display-fullname">Please wait</span>
+            <button class="logout-btn" onclick="logout()">Sign Out</button>
+        </div>
+    </div>
+
+    <div class="backlog-container">
+        
+        <section class="backlog-card" id="gamesCard">
+            <div class="card-header">
+                <div class="card-title">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                         viewBox="0 0 24 24">
+                        <path d="M6 12h.01M9 12h.01M15 12h.01M18 12h.01M4 16h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2z"/>
+                        <path d="M6 20l2-4M18 20l-2-4"/>
+                    </svg>
+                    Games
+                </div>
+                <div class="header-actions">
+                    <span class="card-count" id="gamesCount">0 Items</span>
+                    <button class="btn-icon" onclick="showAddRow('games')" title="Add Game">
+                        <svg fill="none" height="20" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"
+                             width="20">
+                            <path d="M12 5v14M5 12h14"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Platform</th>
+                        <th>Status</th>
+                        <th>Rating</th>
+                        <th style="width: 60px"></th>
+                    </tr>
+                    </thead>
+                    <tbody data-type="games" id="gamesBody"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="backlog-card" id="moviesCard">
+            <div class="card-header">
+                <div class="card-title">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                         viewBox="0 0 24 24">
+                        <rect height="20" rx="2.18" ry="2.18" width="20" x="2" y="2"/>
+                        <line x1="7" x2="7" y1="2" y2="22"/>
+                        <line x1="17" x2="17" y1="2" y2="22"/>
+                        <line x1="2" x2="22" y1="12" y2="12"/>
+                        <line x1="2" x2="7" y1="7" y2="7"/>
+                        <line x1="2" x2="7" y1="17" y2="17"/>
+                        <line x1="17" x2="22" y1="17" y2="17"/>
+                        <line x1="17" x2="22" y1="7" y2="7"/>
+                    </svg>
+                    Movies
+                </div>
+                <div class="header-actions">
+                    <span class="card-count" id="moviesCount">0 Items</span>
+                    <button class="btn-icon" onclick="showAddRow('movies')" title="Add Movie">
+                        <svg fill="none" height="20" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"
+                             width="20">
+                            <path d="M12 5v14M5 12h14"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Platform</th>
+                        <th>Status</th>
+                        <th>Rating</th>
+                        <th style="width: 60px"></th>
+                    </tr>
+                    </thead>
+                    <tbody data-type="movies" id="moviesBody"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="backlog-card" id="tvCard">
+            <div class="card-header">
+                <div class="card-title">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                         viewBox="0 0 24 24">
+                        <rect height="15" rx="2" ry="2" width="20" x="2" y="7"/>
+                        <polyline points="17 2 12 7 7 2"/>
+                    </svg>
+                    TV Shows
+                </div>
+                <div class="header-actions">
+                    <span class="card-count" id="tvCount">0 Items</span>
+                    <button class="btn-icon" onclick="showAddRow('tv')" title="Add Show">
+                        <svg fill="none" height="20" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"
+                             width="20">
+                            <path d="M12 5v14M5 12h14"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Platform</th>
+                        <th>Status</th>
+                        <th>Rating</th>
+                        <th style="width: 60px"></th>
+                    </tr>
+                    </thead>
+                    <tbody data-type="tv" id="tvBody"></tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

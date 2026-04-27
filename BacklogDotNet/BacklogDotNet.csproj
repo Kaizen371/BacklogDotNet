@@ -15,4 +15,8 @@
         <PackageReference Include="MySqlConnector.DependencyInjection" Version="2.5.0"/>
     </ItemGroup>
 
+    <ItemGroup>
+      <None Include="wwwroot\index.html" />
+    </ItemGroup>
+
 </Project>
